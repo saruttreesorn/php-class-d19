@@ -12,10 +12,13 @@
         <main class="container">
             <div class="row">
                 {% for product in products %}
-                <div class="col-md-3" data-id="{{product.product_id}}">
-                    <h3>{{product.name}}</h3>
-                    <h6>{{product.price}}</h6>
-                    <p>{{product.description}}</p>
+                <div class="col-md-3" data-id="{{product.product_id}} card">
+                    <img class="img-fluid card-img-top" src="images/products/{{product.image}}">
+                        <div class="card-body">
+                        <h3 class="card-title">{{product.name}}</h3>
+                        <h6 class="card-subtitle price">{{product.price}}</h6>
+                        <p>{{product.description|slice(0,50) }}</p>
+                    </div>
                 </div>
                 {% endfor %}
             </div>

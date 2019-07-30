@@ -18,10 +18,15 @@ class Product extends Database{
         $statement = $this -> connection -> prepare( $query );
         if( $statement -> execute() ){
             $result = $statement -> get_result();
+            $products = array();
+            $count = 0;
             while( $row = $result -> fetch_assoc() ){
-                array_push( $this -> products, $row );
+                $count++;
+                array_push( $products, $row );
             }
         }
+        $this -> products['items'] = $products;
+        $this -> products['total'] = $count;
         return $this -> products;
     }
 }

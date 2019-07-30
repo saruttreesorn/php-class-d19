@@ -1,0 +1,33 @@
+<div class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between sticky-top">
+  <a class="navbar-brand text-warning">Shop</a>
+  <form class="form-inline flex-md-fill">
+    <input class="form-control mr-sm-2 flex-md-fill" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-dark d-none d-sm-block" type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </form>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navigation" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fa fa-bars"></i>
+  </button>
+  <div class="btn-toolbar flex-md-fill justify-content-center">
+    <div class="btn-group">
+      <button class="btn btn-dark text-light">
+        <i class="fa fa-shopping-cart"></i>
+        <span class="badge badge-info cart-count">0</span>
+      </button>
+      <button class="btn btn-dark">
+        <i class="fa fa-heart"></i>
+        <span class="badge badge-info wish-count">0</span>
+      </button>
+    </div>
+  </div>
+  
+  <div class="collapse navbar-collapse justify-content-end flex-grow-0" id="main-navigation">
+    <nav class="navbar-nav">
+      {% for navitem in navitems.navs %}
+        {% set active = ( navitem.url == navitems.active ) ? 'active' : '' %}
+        <a href="{{navitem.url}}" class="{{active}} nav-link">{{navitem.menu}}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</div>

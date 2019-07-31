@@ -1,5 +1,6 @@
 <?php
 namespace aitsydney;
+use aitsydney\Database;
 class Product extends Database{
     public function __construct(){
         parent::__construct();
@@ -14,7 +15,7 @@ class Product extends Database{
         FROM product 
         INNER JOIN product_image ON product.product_id = product_image.product_id
         INNER JOIN image ON product_image.image_id = image.image_id";
-
+        
         $statement = $this -> connection -> prepare( $query );
         if( $statement -> execute() ){
             $result = $statement -> get_result();

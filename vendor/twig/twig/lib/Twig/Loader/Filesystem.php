@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -284,5 +285,14 @@ class Twig_Loader_Filesystem implements Twig_LoaderInterface, Twig_ExistsLoaderI
             )
             || null !== parse_url($file, PHP_URL_SCHEME)
         ;
+=======
+use Twig\Loader\FilesystemLoader;
+
+class_exists('Twig\Loader\FilesystemLoader');
+
+if (\false) {
+    class Twig_Loader_Filesystem extends FilesystemLoader
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

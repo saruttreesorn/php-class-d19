@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -54,5 +55,14 @@ class Twig_FileExtensionEscapingStrategy
             default:
                 return 'html';
         }
+=======
+use Twig\FileExtensionEscapingStrategy;
+
+class_exists('Twig\FileExtensionEscapingStrategy');
+
+if (\false) {
+    class Twig_FileExtensionEscapingStrategy extends FileExtensionEscapingStrategy
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -107,5 +108,14 @@ class Twig_Node_For extends Twig_Node
 
         // keep the values set in the inner context for variables defined in the outer context
         $compiler->write("\$context = array_intersect_key(\$context, \$_parent) + \$_parent;\n");
+=======
+use Twig\Node\ForNode;
+
+class_exists('Twig\Node\ForNode');
+
+if (\false) {
+    class Twig_Node_For extends ForNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

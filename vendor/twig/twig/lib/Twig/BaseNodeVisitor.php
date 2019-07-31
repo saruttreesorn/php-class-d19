@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -47,4 +48,14 @@ abstract class Twig_BaseNodeVisitor implements Twig_NodeVisitorInterface
      * @return Twig_Node|false The modified node or false if the node must be removed
      */
     abstract protected function doLeaveNode(Twig_Node $node, Twig_Environment $env);
+=======
+use Twig\NodeVisitor\AbstractNodeVisitor;
+
+class_exists('Twig\NodeVisitor\AbstractNodeVisitor');
+
+if (\false) {
+    class Twig_BaseNodeVisitor extends AbstractNodeVisitor
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

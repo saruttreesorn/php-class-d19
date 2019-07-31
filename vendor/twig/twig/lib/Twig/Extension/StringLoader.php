@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -43,3 +44,14 @@ function twig_template_from_string(Twig_Environment $env, $template)
 {
     return $env->createTemplate((string) $template);
 }
+=======
+use Twig\Extension\StringLoaderExtension;
+
+class_exists('Twig\Extension\StringLoaderExtension');
+
+if (\false) {
+    class Twig_Extension_StringLoader extends StringLoaderExtension
+    {
+    }
+}
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9

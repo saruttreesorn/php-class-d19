@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -30,5 +31,14 @@ class Twig_Node_Text extends Twig_Node implements Twig_NodeOutputInterface
             ->string($this->getAttribute('data'))
             ->raw(";\n")
         ;
+=======
+use Twig\Node\TextNode;
+
+class_exists('Twig\Node\TextNode');
+
+if (\false) {
+    class Twig_Node_Text extends TextNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

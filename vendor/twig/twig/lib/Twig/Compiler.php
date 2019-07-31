@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -277,5 +278,14 @@ class Twig_Compiler implements Twig_CompilerInterface
     public function getVarName()
     {
         return sprintf('__internal_%s', hash('sha256', uniqid(mt_rand(), true), false));
+=======
+use Twig\Compiler;
+
+class_exists('Twig\Compiler');
+
+if (\false) {
+    class Twig_Compiler extends Compiler
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

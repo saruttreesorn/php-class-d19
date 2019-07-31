@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -127,5 +128,14 @@ final class Twig_TemplateWrapper
     public function getSourceContext()
     {
         return $this->template->getSourceContext();
+=======
+use Twig\TemplateWrapper;
+
+class_exists('Twig\TemplateWrapper');
+
+if (\false) {
+    class Twig_TemplateWrapper extends TemplateWrapper
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -66,5 +67,14 @@ class Twig_Profiler_Dumper_Text
         }
 
         return $str;
+=======
+use Twig\Profiler\Dumper\TextDumper;
+
+class_exists('Twig\Profiler\Dumper\TextDumper');
+
+if (\false) {
+    class Twig_Profiler_Dumper_Text extends TextDumper
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

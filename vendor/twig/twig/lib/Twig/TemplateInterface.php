@@ -9,6 +9,11 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
+=======
+use Twig\Environment;
+
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 /**
  * Interface implemented by all compiled templates.
  *
@@ -37,12 +42,20 @@ interface Twig_TemplateInterface
      * @param array $context An array of parameters to pass to the template
      * @param array $blocks  An array of blocks to pass to the template
      */
+<<<<<<< HEAD
     public function display(array $context, array $blocks = array());
+=======
+    public function display(array $context, array $blocks = []);
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     /**
      * Returns the bound environment for this template.
      *
+<<<<<<< HEAD
      * @return Twig_Environment
+=======
+     * @return Environment
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
      */
     public function getEnvironment();
 }

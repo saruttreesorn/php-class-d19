@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -697,5 +698,14 @@ abstract class Twig_Template implements Twig_TemplateInterface
         }
 
         return $ret;
+=======
+use Twig\Template;
+
+class_exists('Twig\Template');
+
+if (\false) {
+    class Twig_Template extends Template
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

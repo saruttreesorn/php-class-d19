@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -35,5 +36,14 @@ class Twig_Node_Block extends Twig_Node
             ->outdent()
             ->write("}\n\n")
         ;
+=======
+use Twig\Node\BlockNode;
+
+class_exists('Twig\Node\BlockNode');
+
+if (\false) {
+    class Twig_Node_Block extends BlockNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

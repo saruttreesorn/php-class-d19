@@ -9,7 +9,11 @@
 
 Converts an argument to a date to allow date comparison:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% if date(user.created_at) < date('-2days') %}
         {# do something #}
@@ -19,7 +23,11 @@ The argument must be in one of PHP’s supported `date and time formats`_.
 
 You can pass a timezone as the second argument:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% if date(user.created_at) < date('-2days', 'Europe/Paris') %}
         {# do something #}
@@ -27,7 +35,11 @@ You can pass a timezone as the second argument:
 
 If no argument is passed, the function returns the current date:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% if date(user.created_at) < date() %}
         {# always! #}
@@ -40,8 +52,13 @@ If no argument is passed, the function returns the current date:
 
     .. code-block:: php
 
+<<<<<<< HEAD
         $twig = new Twig_Environment($loader);
         $twig->getExtension('Twig_Extension_Core')->setTimezone('Europe/Paris');
+=======
+        $twig = new \Twig\Environment($loader);
+        $twig->getExtension('\Twig\Extension\CoreExtension')->setTimezone('Europe/Paris');
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
         // before Twig 1.26
         $twig->getExtension('core')->setTimezone('Europe/Paris');
@@ -52,4 +69,8 @@ Arguments
 * ``date``:     The date
 * ``timezone``: The timezone
 
+<<<<<<< HEAD
 .. _`date and time formats`: http://php.net/manual/en/datetime.formats.php
+=======
+.. _`date and time formats`: https://secure.php.net/manual/en/datetime.formats.php
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9

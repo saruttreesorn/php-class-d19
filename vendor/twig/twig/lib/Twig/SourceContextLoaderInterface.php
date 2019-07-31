@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -28,4 +29,14 @@ interface Twig_SourceContextLoaderInterface
      * @throws Twig_Error_Loader When $name is not found
      */
     public function getSourceContext($name);
+=======
+use Twig\Loader\SourceContextLoaderInterface;
+
+class_exists('Twig\Loader\SourceContextLoaderInterface');
+
+if (\false) {
+    class Twig_SourceContextLoaderInterface extends SourceContextLoaderInterface
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

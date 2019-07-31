@@ -9,6 +9,10 @@
 --TEMPLATE(bar.twig)--
 {% block content %}BAR{% endblock %}
 --DATA--
+<<<<<<< HEAD
 return array('foo' => 'foo.twig', 'standalone' => true)
+=======
+return ['foo' => 'foo.twig', 'standalone' => true]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 FOOFOO

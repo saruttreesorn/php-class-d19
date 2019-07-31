@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -92,5 +93,14 @@ class Twig_Node_Set extends Twig_Node implements Twig_NodeCaptureInterface
         }
 
         $compiler->raw(";\n");
+=======
+use Twig\Node\SetNode;
+
+class_exists('Twig\Node\SetNode');
+
+if (\false) {
+    class Twig_Node_Set extends SetNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

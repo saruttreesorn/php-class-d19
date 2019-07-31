@@ -6,7 +6,11 @@
 --TEMPLATE(foo.twig)--
 {{ foo }}
 --DATA--
+<<<<<<< HEAD
 return array('vars' => array('foo' => 'bar'))
+=======
+return ['vars' => ['foo' => 'bar']]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 bar
 bar

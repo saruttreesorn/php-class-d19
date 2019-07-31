@@ -35,7 +35,11 @@
 {% block content_use2 'content_use2' %}
 {% block content_use2_only 'content_use2_only' %}
 --DATA--
+<<<<<<< HEAD
 return array()
+=======
+return []
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
     content_parent
     content_use1

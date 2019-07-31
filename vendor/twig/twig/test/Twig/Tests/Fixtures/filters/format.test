@@ -3,6 +3,10 @@
 --TEMPLATE--
 {{ string|format(foo, 3) }}
 --DATA--
+<<<<<<< HEAD
 return array('string' => '%s/%d', 'foo' => 'bar')
+=======
+return ['string' => '%s/%d', 'foo' => 'bar']
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 bar/3

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -37,5 +38,14 @@ class Twig_Node_Expression_MethodCall extends Twig_Node_Expression
             $compiler->subcompile($pair['value']);
         }
         $compiler->raw(')');
+=======
+use Twig\Node\Expression\MethodCallExpression;
+
+class_exists('Twig\Node\Expression\MethodCallExpression');
+
+if (\false) {
+    class Twig_Node_Expression_MethodCall extends MethodCallExpression
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

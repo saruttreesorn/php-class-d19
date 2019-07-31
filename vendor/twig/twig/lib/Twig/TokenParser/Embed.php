@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -61,5 +62,14 @@ class Twig_TokenParser_Embed extends Twig_TokenParser_Include
     public function getTag()
     {
         return 'embed';
+=======
+use Twig\TokenParser\EmbedTokenParser;
+
+class_exists('Twig\TokenParser\EmbedTokenParser');
+
+if (\false) {
+    class Twig_TokenParser_Embed extends EmbedTokenParser
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -17,4 +18,14 @@
  */
 class Twig_Error_Runtime extends Twig_Error
 {
+=======
+use Twig\Error\RuntimeError;
+
+class_exists('Twig\Error\RuntimeError');
+
+if (\false) {
+    class Twig_Error_Runtime extends RuntimeError
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

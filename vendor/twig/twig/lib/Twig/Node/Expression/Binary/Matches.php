@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -24,5 +25,14 @@ class Twig_Node_Expression_Binary_Matches extends Twig_Node_Expression_Binary
     public function operator(Twig_Compiler $compiler)
     {
         return $compiler->raw('');
+=======
+use Twig\Node\Expression\Binary\MatchesBinary;
+
+class_exists('Twig\Node\Expression\Binary\MatchesBinary');
+
+if (\false) {
+    class Twig_Node_Expression_Binary_Matches extends MatchesBinary
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

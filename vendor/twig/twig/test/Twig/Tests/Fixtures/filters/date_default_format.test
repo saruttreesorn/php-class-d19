@@ -5,10 +5,17 @@
 {{ date1|date('d/m/Y') }}
 --DATA--
 date_default_timezone_set('UTC');
+<<<<<<< HEAD
 $twig->getExtension('Twig_Extension_Core')->setDateFormat('Y-m-d', '%d days %h hours');
 return array(
     'date1' => mktime(13, 45, 0, 10, 4, 2010),
 )
+=======
+$twig->getExtension('\Twig\Extension\CoreExtension')->setDateFormat('Y-m-d', '%d days %h hours');
+return [
+    'date1' => mktime(13, 45, 0, 10, 4, 2010),
+]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 2010-10-04
 04/10/2010

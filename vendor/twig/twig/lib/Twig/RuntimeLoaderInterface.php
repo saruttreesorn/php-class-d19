@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -24,4 +25,14 @@ interface Twig_RuntimeLoaderInterface
      * @return object|null The runtime instance or null if the loader does not know how to create the runtime for this class
      */
     public function load($class);
+=======
+use Twig\RuntimeLoader\RuntimeLoaderInterface;
+
+class_exists('Twig\RuntimeLoader\RuntimeLoaderInterface');
+
+if (\false) {
+    class Twig_RuntimeLoaderInterface extends RuntimeLoaderInterface
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

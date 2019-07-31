@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -24,4 +25,14 @@ abstract class Twig_Node_Expression_Unary extends Twig_Node_Expression
     }
 
     abstract public function operator(Twig_Compiler $compiler);
+=======
+use Twig\Node\Expression\Unary\AbstractUnary;
+
+class_exists('Twig\Node\Expression\Unary\AbstractUnary');
+
+if (\false) {
+    class Twig_Node_Expression_Unary extends AbstractUnary
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

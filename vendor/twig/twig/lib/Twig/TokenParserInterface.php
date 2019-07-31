@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -36,4 +37,14 @@ interface Twig_TokenParserInterface
      * @return string The tag name
      */
     public function getTag();
+=======
+use Twig\TokenParser\TokenParserInterface;
+
+class_exists('Twig\TokenParser\TokenParserInterface');
+
+if (\false) {
+    class Twig_TokenParserInterface extends TokenParserInterface
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

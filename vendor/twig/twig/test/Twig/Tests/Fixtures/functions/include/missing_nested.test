@@ -11,6 +11,12 @@
     {{ include("foo.twig") }}
 {% endblock %}
 --DATA--
+<<<<<<< HEAD
 return array();
 --EXCEPTION--
 Twig_Error_Loader: Template "foo.twig" is not defined in "base.twig" at line 3.
+=======
+return []
+--EXCEPTION--
+Twig\Error\LoaderError: Template "foo.twig" is not defined in "base.twig" at line 3.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9

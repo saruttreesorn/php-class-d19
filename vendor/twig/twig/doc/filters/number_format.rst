@@ -7,17 +7,36 @@
 The ``number_format`` filter formats numbers.  It is a wrapper around PHP's
 `number_format`_ function:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ 200.35|number_format }}
 
 You can control the number of decimal places, decimal point, and thousands
 separator using the additional arguments:
 
+<<<<<<< HEAD
 .. code-block:: jinja
 
     {{ 9800.333|number_format(2, '.', ',') }}
 
+=======
+.. code-block:: twig
+
+    {{ 9800.333|number_format(2, '.', ',') }}
+
+To format negative numbers, wrap the number with parentheses (needed because of
+Twig's :ref:`precedence of operators <twig-expressions>`:
+
+.. code-block:: twig
+
+    {{ -9800.333|number_format(2, '.', ',') }} {# outputs : -9 #}
+    {{ (-9800.333)|number_format(2, '.', ',') }} {# outputs : -9,800.33 #}
+
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 If no formatting options are provided then Twig will use the default formatting
 options of:
 
@@ -29,8 +48,13 @@ These defaults can be easily changed through the core extension:
 
 .. code-block:: php
 
+<<<<<<< HEAD
     $twig = new Twig_Environment($loader);
     $twig->getExtension('Twig_Extension_Core')->setNumberFormat(3, '.', ',');
+=======
+    $twig = new \Twig\Environment($loader);
+    $twig->getExtension('\Twig\Extension\CoreExtension')->setNumberFormat(3, '.', ',');
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     // before Twig 1.26
     $twig->getExtension('core')->setNumberFormat(3, '.', ',');
@@ -45,4 +69,8 @@ Arguments
 * ``decimal_point``: The character(s) to use for the decimal point
 * ``thousand_sep``:   The character(s) to use for the thousands separator
 
+<<<<<<< HEAD
 .. _`number_format`: http://php.net/number_format
+=======
+.. _`number_format`: https://secure.php.net/number_format
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9

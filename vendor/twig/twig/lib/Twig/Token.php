@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -201,5 +202,14 @@ class Twig_Token
             default:
                 throw new LogicException(sprintf('Token of type "%s" does not exist.', $type));
         }
+=======
+use Twig\Token;
+
+class_exists('Twig\Token');
+
+if (\false) {
+    class Twig_Token extends Token
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

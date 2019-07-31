@@ -6,7 +6,11 @@
 
 ``iterable`` checks if a variable is an array or a traversable object:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {# evaluates to true if the foo variable is iterable #}
     {% if users is iterable %}

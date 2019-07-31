@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -66,5 +67,14 @@ EOF;
                 'pmu' => $profile->getPeakMemoryUsage(),
             );
         }
+=======
+use Twig\Profiler\Dumper\BlackfireDumper;
+
+class_exists('Twig\Profiler\Dumper\BlackfireDumper');
+
+if (\false) {
+    class Twig_Profiler_Dumper_Blackfire extends BlackfireDumper
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

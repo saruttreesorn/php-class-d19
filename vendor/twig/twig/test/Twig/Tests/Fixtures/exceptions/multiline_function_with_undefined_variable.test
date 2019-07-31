@@ -7,6 +7,12 @@ Exception for multile function with undefined variable
 --TEMPLATE(foo)--
 Foo
 --DATA--
+<<<<<<< HEAD
 return array()
 --EXCEPTION--
 Twig_Error_Runtime: Variable "with_context" does not exist in "index.twig" at line 3.
+=======
+return []
+--EXCEPTION--
+Twig\Error\RuntimeError: Variable "with_context" does not exist in "index.twig" at line 3.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9

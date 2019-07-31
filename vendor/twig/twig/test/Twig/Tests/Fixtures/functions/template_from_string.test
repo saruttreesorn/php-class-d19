@@ -8,7 +8,11 @@
 --TEMPLATE(parent.twig)--
 {% block content %}{% endblock %}
 --DATA--
+<<<<<<< HEAD
 return array('name' => 'Fabien', 'template' => "Hello {{ name }}")
+=======
+return ['name' => 'Fabien', 'template' => "Hello {{ name }}"]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 Hello Fabien
 Hello Fabien

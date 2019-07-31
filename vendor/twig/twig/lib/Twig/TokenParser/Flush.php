@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -28,5 +29,14 @@ class Twig_TokenParser_Flush extends Twig_TokenParser
     public function getTag()
     {
         return 'flush';
+=======
+use Twig\TokenParser\FlushTokenParser;
+
+class_exists('Twig\TokenParser\FlushTokenParser');
+
+if (\false) {
+    class Twig_TokenParser_Flush extends FlushTokenParser
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

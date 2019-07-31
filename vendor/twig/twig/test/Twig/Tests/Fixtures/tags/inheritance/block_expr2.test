@@ -10,7 +10,10 @@ block_expr2
 --TEMPLATE(base2.twig)--
 {% extends "base.twig" %}
 --TEMPLATE(base.twig)--
+<<<<<<< HEAD
 {% spaceless %}
+=======
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 {% block element -%}
     <div>
         {%- if item.children is defined %}
@@ -20,6 +23,7 @@ block_expr2
         {%- endif -%}
     </div>
 {%- endblock %}
+<<<<<<< HEAD
 {% endspaceless %}
 --DATA--
 return array(
@@ -30,5 +34,16 @@ return array(
         )
     )
 )
+=======
+--DATA--
+return [
+    'item' => [
+        'children' => [
+            null,
+            null,
+        ]
+    ]
+]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 Element:<div>Element:<div></div>Element:<div></div></div>

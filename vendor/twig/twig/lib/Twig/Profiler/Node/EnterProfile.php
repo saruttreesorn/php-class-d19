@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -33,5 +34,14 @@ class Twig_Profiler_Node_EnterProfile extends Twig_Node
             ->repr($this->getAttribute('name'))
             ->raw("));\n\n")
         ;
+=======
+use Twig\Profiler\Node\EnterProfileNode;
+
+class_exists('Twig\Profiler\Node\EnterProfileNode');
+
+if (\false) {
+    class Twig_Profiler_Node_EnterProfile extends EnterProfileNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

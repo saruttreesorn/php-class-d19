@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -19,5 +20,14 @@ class Twig_Node_Expression_Constant extends Twig_Node_Expression
     public function compile(Twig_Compiler $compiler)
     {
         $compiler->repr($this->getAttribute('value'));
+=======
+use Twig\Node\Expression\ConstantExpression;
+
+class_exists('Twig\Node\Expression\ConstantExpression');
+
+if (\false) {
+    class Twig_Node_Expression_Constant extends ConstantExpression
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

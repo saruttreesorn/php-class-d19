@@ -18,7 +18,11 @@
     <div class="sub_container">sub_container</div>
 {% endblock %}
 --DATA--
+<<<<<<< HEAD
 return array()
+=======
+return []
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 <div class="container">    <div class="overridden_sub_container">overridden sub_container</div>
 </div>

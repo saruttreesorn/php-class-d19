@@ -6,7 +6,11 @@
 
 The ``round`` filter rounds a number to a given precision:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ 42.55|round }}
     {# outputs 43 #}

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -418,5 +419,14 @@ class Twig_Lexer implements Twig_LexerInterface
         }
 
         $this->state = array_pop($this->states);
+=======
+use Twig\Lexer;
+
+class_exists('Twig\Lexer');
+
+if (\false) {
+    class Twig_Lexer extends Lexer
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

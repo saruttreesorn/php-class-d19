@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -247,5 +248,14 @@ class Twig_NodeVisitor_Optimizer extends Twig_BaseNodeVisitor
     public function getPriority()
     {
         return 255;
+=======
+use Twig\NodeVisitor\OptimizerNodeVisitor;
+
+class_exists('Twig\NodeVisitor\OptimizerNodeVisitor');
+
+if (\false) {
+    class Twig_NodeVisitor_Optimizer extends OptimizerNodeVisitor
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

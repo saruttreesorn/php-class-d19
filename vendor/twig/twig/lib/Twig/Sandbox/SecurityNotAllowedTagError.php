@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -27,5 +28,14 @@ class Twig_Sandbox_SecurityNotAllowedTagError extends Twig_Sandbox_SecurityError
     public function getTagName()
     {
         return $this->tagName;
+=======
+use Twig\Sandbox\SecurityNotAllowedTagError;
+
+class_exists('Twig\Sandbox\SecurityNotAllowedTagError');
+
+if (\false) {
+    class Twig_Sandbox_SecurityNotAllowedTagError extends SecurityNotAllowedTagError
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -22,5 +23,14 @@ class Twig_Node_Expression_TempName extends Twig_Node_Expression
             ->raw($this->getAttribute('name'))
             ->raw('_')
         ;
+=======
+use Twig\Node\Expression\TempNameExpression;
+
+class_exists('Twig\Node\Expression\TempNameExpression');
+
+if (\false) {
+    class Twig_Node_Expression_TempName extends TempNameExpression
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

@@ -2,6 +2,7 @@
 "include" tag accept variables
 --TEMPLATE--
 {% include "foo.twig" with {'foo': 'bar'} %}
+<<<<<<< HEAD
 {% include "foo.twig" with vars %}
 --TEMPLATE(foo.twig)--
 {{ foo }}
@@ -10,3 +11,15 @@ return array('vars' => array('foo' => 'bar'))
 --EXPECT--
 bar
 bar
+=======
+{% include "foo.twig" with vars1 %}
+{% include "foo.twig" with vars2 %}
+--TEMPLATE(foo.twig)--
+{{ foo }}
+--DATA--
+return ['vars1' => ['foo' => 'bar'], 'vars2' => new ArrayObject(['foo' => 'bar'])]
+--EXPECT--
+bar
+bar
+bar
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9

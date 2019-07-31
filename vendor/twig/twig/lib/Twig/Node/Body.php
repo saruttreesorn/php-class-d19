@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -16,4 +17,14 @@
  */
 class Twig_Node_Body extends Twig_Node
 {
+=======
+use Twig\Node\BodyNode;
+
+class_exists('Twig\Node\BodyNode');
+
+if (\false) {
+    class Twig_Node_Body extends BodyNode
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

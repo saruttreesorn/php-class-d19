@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -77,5 +78,14 @@ class Twig_Node_Expression_Array extends Twig_Node_Expression
             ;
         }
         $compiler->raw(')');
+=======
+use Twig\Node\Expression\ArrayExpression;
+
+class_exists('Twig\Node\Expression\ArrayExpression');
+
+if (\false) {
+    class Twig_Node_Expression_Array extends ArrayExpression
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -27,5 +28,14 @@ class Twig_Node_Flush extends Twig_Node
             ->addDebugInfo($this)
             ->write("flush();\n")
         ;
+=======
+use Twig\Node\FlushNode;
+
+class_exists('Twig\Node\FlushNode');
+
+if (\false) {
+    class Twig_Node_Flush extends FlushNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

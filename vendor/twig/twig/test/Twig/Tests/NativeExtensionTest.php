@@ -9,13 +9,21 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 class Twig_Tests_NativeExtensionTest extends PHPUnit_Framework_TestCase
+=======
+use Twig\Environment;
+use Twig\Loader\ArrayLoader;
+
+class Twig_Tests_NativeExtensionTest extends \PHPUnit\Framework\TestCase
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 {
     /**
      * @requires PHP 5.3
      */
     public function testGetProperties()
     {
+<<<<<<< HEAD
         if (defined('HHVM_VERSION')) {
             $this->markTestSkipped('Skip under HHVM as the behavior is not the same as plain PHP (which is an edge case anyway)');
         }
@@ -28,6 +36,20 @@ class Twig_Tests_NativeExtensionTest extends PHPUnit_Framework_TestCase
 
         $d1 = new DateTime();
         $d2 = new DateTime();
+=======
+        if (PHP_VERSION_ID >= 70000) {
+            $this->markTestSkipped('Extension is not available on PHP 7+');
+        }
+
+        $twig = new Environment(new ArrayLoader(['index' => '{{ d1.date }}{{ d2.date }}']), [
+            'debug' => true,
+            'cache' => false,
+            'autoescape' => false,
+        ]);
+
+        $d1 = new \DateTime();
+        $d2 = new \DateTime();
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
         $output = $twig->render('index', compact('d1', 'd2'));
 
         // If it fails, PHP will crash.

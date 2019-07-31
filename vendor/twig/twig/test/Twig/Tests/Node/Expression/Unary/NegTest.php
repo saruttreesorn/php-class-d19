@@ -9,18 +9,32 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 class Twig_Tests_Node_Expression_Unary_NegTest extends Twig_Test_NodeTestCase
 {
     public function testConstructor()
     {
         $expr = new Twig_Node_Expression_Constant(1, 1);
         $node = new Twig_Node_Expression_Unary_Neg($expr, 1);
+=======
+use Twig\Node\Expression\ConstantExpression;
+use Twig\Node\Expression\Unary\NegUnary;
+use Twig\Test\NodeTestCase;
+
+class Twig_Tests_Node_Expression_Unary_NegTest extends NodeTestCase
+{
+    public function testConstructor()
+    {
+        $expr = new ConstantExpression(1, 1);
+        $node = new NegUnary($expr, 1);
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
         $this->assertEquals($expr, $node->getNode('node'));
     }
 
     public function getTests()
     {
+<<<<<<< HEAD
         $node = new Twig_Node_Expression_Constant(1, 1);
         $node = new Twig_Node_Expression_Unary_Neg($node, 1);
 
@@ -28,5 +42,14 @@ class Twig_Tests_Node_Expression_Unary_NegTest extends Twig_Test_NodeTestCase
             array($node, '-1'),
             array(new Twig_Node_Expression_Unary_Neg($node, 1), '- -1'),
         );
+=======
+        $node = new ConstantExpression(1, 1);
+        $node = new NegUnary($node, 1);
+
+        return [
+            [$node, '-1'],
+            [new NegUnary($node, 1), '- -1'],
+        ];
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

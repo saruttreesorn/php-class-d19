@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -82,5 +83,14 @@ class Twig_Cache_Filesystem implements Twig_CacheInterface
         }
 
         return (int) @filemtime($key);
+=======
+use Twig\Cache\FilesystemCache;
+
+class_exists('Twig\Cache\FilesystemCache');
+
+if (\false) {
+    class Twig_Cache_Filesystem extends FilesystemCache
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

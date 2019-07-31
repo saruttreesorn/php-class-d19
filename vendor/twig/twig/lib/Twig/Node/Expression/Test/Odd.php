@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -28,5 +29,14 @@ class Twig_Node_Expression_Test_Odd extends Twig_Node_Expression_Test
             ->raw(' % 2 == 1')
             ->raw(')')
         ;
+=======
+use Twig\Node\Expression\Test\OddTest;
+
+class_exists('Twig\Node\Expression\Test\OddTest');
+
+if (\false) {
+    class Twig_Node_Expression_Test_Odd extends OddTest
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

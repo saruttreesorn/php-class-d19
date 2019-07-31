@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -119,5 +120,14 @@ class Twig_Sandbox_SecurityPolicy implements Twig_Sandbox_SecurityPolicyInterfac
             $class = get_class($obj);
             throw new Twig_Sandbox_SecurityNotAllowedPropertyError(sprintf('Calling "%s" property on a "%s" object is not allowed.', $property, $class), $class, $property);
         }
+=======
+use Twig\Sandbox\SecurityPolicy;
+
+class_exists('Twig\Sandbox\SecurityPolicy');
+
+if (\false) {
+    class Twig_Sandbox_SecurityPolicy extends SecurityPolicy
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

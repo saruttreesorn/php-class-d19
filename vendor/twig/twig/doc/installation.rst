@@ -6,6 +6,7 @@ You have multiple ways to install Twig.
 Installing the Twig PHP package
 -------------------------------
 
+<<<<<<< HEAD
 Installing via Composer (recommended)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -42,6 +43,13 @@ Installing the PEAR package
 
     pear channel-discover pear.twig-project.org
     pear install twig/Twig
+=======
+Install `Composer`_ and run the following command:
+
+.. code-block:: bash
+
+    composer require "twig/twig:^1.0"
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
 Installing the C extension
 --------------------------
@@ -49,6 +57,7 @@ Installing the C extension
 .. versionadded:: 1.4
     The C extension was added in Twig 1.4.
 
+<<<<<<< HEAD
 .. note::
 
     The C extension is **optional** but it brings some nice performance
@@ -58,6 +67,18 @@ Installing the C extension
 
 Twig comes with a C extension that enhances the performance of the Twig
 runtime engine; install it like any other PHP extensions:
+=======
+Twig comes with an **optional** C extension that improves the performance of the
+Twig runtime engine.
+
+Note that this extension does not replace the PHP code but only provides an
+optimized version of the ``\Twig\Template::getAttribute()`` method; you must
+still install the regular PHP code
+
+The C extension is only compatible and useful for **PHP5**.
+
+Install it like any other PHP extensions:
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
 .. code-block:: bash
 
@@ -67,6 +88,7 @@ runtime engine; install it like any other PHP extensions:
     make
     make install
 
+<<<<<<< HEAD
 .. note::
 
     You can also install the C extension via PEAR (note that this method is
@@ -78,6 +100,8 @@ runtime engine; install it like any other PHP extensions:
         pear channel-discover pear.twig-project.org
         pear install twig/CTwig
 
+=======
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 For Windows:
 
 1. Setup the build environment following the `PHP documentation`_
@@ -102,6 +126,7 @@ Finally, enable the extension in your ``php.ini`` configuration file:
 
 .. code-block:: ini
 
+<<<<<<< HEAD
     extension=twig.so #For Unix systems
     extension=php_twig.dll #For Windows systems
 
@@ -109,8 +134,19 @@ And from now on, Twig will automatically compile your templates to take
 advantage of the C extension. Note that this extension does not replace the
 PHP code but only provides an optimized version of the
 ``Twig_Template::getAttribute()`` method.
+=======
+    extension=twig.so # For Unix systems
+    extension=php_twig.dll # For Windows systems
+
+And from now on, Twig will automatically compile your templates to take
+advantage of the C extension.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
 .. _`download page`:     https://github.com/twigphp/Twig/tags
 .. _`Composer`:          https://getcomposer.org/download/
 .. _`PHP documentation`: https://wiki.php.net/internals/windows/stepbystepbuild
+<<<<<<< HEAD
 .. _`Zend Server FAQ`:   http://www.zend.com/en/products/server/faq#faqD6
+=======
+.. _`Zend Server FAQ`:   https://www.zend.com/en/products/server/faq#faqD6
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9

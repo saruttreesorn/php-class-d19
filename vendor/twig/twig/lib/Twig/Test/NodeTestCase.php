@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -64,5 +65,14 @@ abstract class Twig_Test_NodeTestCase extends PHPUnit_Framework_TestCase
         }
 
         return '$this->getAttribute(';
+=======
+use Twig\Test\NodeTestCase;
+
+class_exists('Twig\Test\NodeTestCase');
+
+if (\false) {
+    class Twig_Test_NodeTestCase extends NodeTestCase
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

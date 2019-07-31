@@ -7,7 +7,11 @@
 
 ``divisible by`` checks if a variable is divisible by a number:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% if loop.index is divisible by(3) %}
         ...

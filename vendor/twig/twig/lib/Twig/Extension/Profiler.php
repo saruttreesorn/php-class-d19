@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -42,5 +43,14 @@ class Twig_Extension_Profiler extends Twig_Extension
     public function getName()
     {
         return 'profiler';
+=======
+use Twig\Extension\ProfilerExtension;
+
+class_exists('Twig\Extension\ProfilerExtension');
+
+if (\false) {
+    class Twig_Extension_Profiler extends ProfilerExtension
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -97,5 +98,14 @@ class Twig_Extension_Sandbox extends Twig_Extension
     public function getName()
     {
         return 'sandbox';
+=======
+use Twig\Extension\SandboxExtension;
+
+class_exists('Twig\Extension\SandboxExtension');
+
+if (\false) {
+    class Twig_Extension_Sandbox extends SandboxExtension
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

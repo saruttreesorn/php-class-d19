@@ -733,7 +733,11 @@ PHP_FUNCTION(twig_template_get_attributes)
 
 /*
 	// array
+<<<<<<< HEAD
 	if (Twig_Template::METHOD_CALL !== $type) {
+=======
+	if (\Twig\Template::METHOD_CALL !== $type) {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 		$arrayItem = is_bool($item) || is_float($item) ? (int) $item : $item;
 
 		if ((is_array($object) && array_key_exists($arrayItem, $object))
@@ -771,7 +775,11 @@ PHP_FUNCTION(twig_template_get_attributes)
 			return;
 		}
 /*
+<<<<<<< HEAD
 		if (Twig_Template::ARRAY_CALL === $type) {
+=======
+		if (\Twig\Template::ARRAY_CALL === $type) {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 			if ($isDefinedTest) {
 				return false;
 			}
@@ -799,7 +807,11 @@ PHP_FUNCTION(twig_template_get_attributes)
 				} else {
 					$message = sprintf('Key "%s" for array with keys "%s" does not exist', $arrayItem, implode(', ', array_keys($object)));
 				}
+<<<<<<< HEAD
 			} elseif (Twig_Template::ARRAY_CALL === $type) {
+=======
+			} elseif (\Twig\Template::ARRAY_CALL === $type) {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 				if (null === $object) {
 					$message = sprintf('Impossible to access a key ("%s") on a null variable', $item);
 				} else {
@@ -810,7 +822,11 @@ PHP_FUNCTION(twig_template_get_attributes)
 			} else {
 				$message = sprintf('Impossible to access an attribute ("%s") on a %s variable ("%s")', $item, gettype($object), $object);
 			}
+<<<<<<< HEAD
 			throw new Twig_Error_Runtime($message, -1, $this->getTemplateName());
+=======
+			throw new \Twig\Error\RuntimeError($message, -1, $this->getTemplateName());
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 		}
 	}
 */
@@ -870,11 +886,20 @@ PHP_FUNCTION(twig_template_get_attributes)
 
 		if (null === $object) {
 			$message = sprintf('Impossible to invoke a method ("%s") on a null variable', $item);
+<<<<<<< HEAD
+=======
+		} elseif (is_array($object)) {
+			$message = sprintf('Impossible to invoke a method ("%s") on an array.', $item);
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 		} else {
 			$message = sprintf('Impossible to invoke a method ("%s") on a %s variable ("%s")', $item, gettype($object), $object);
 		}
 
+<<<<<<< HEAD
 		throw new Twig_Error_Runtime($message, -1, $this->getTemplateName());
+=======
+		throw new \Twig\Error\RuntimeError($message, -1, $this->getTemplateName());
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 	}
 */
 		if (ignoreStrictCheck || !TWIG_CALL_BOOLEAN(TWIG_PROPERTY_CHAR(template, "env" TSRMLS_CC), "isStrictVariables" TSRMLS_CC)) {
@@ -885,9 +910,15 @@ PHP_FUNCTION(twig_template_get_attributes)
 		type_name = zend_zval_type_name(object);
 		Z_ADDREF_P(object);
 		if (Z_TYPE_P(object) == IS_NULL) {
+<<<<<<< HEAD
 			convert_to_string_ex(&object);
 
 			TWIG_RUNTIME_ERROR(template TSRMLS_CC, "Impossible to invoke a method (\"%s\") on a %s variable.", item, type_name);
+=======
+			TWIG_RUNTIME_ERROR(template TSRMLS_CC, "Impossible to invoke a method (\"%s\") on a null variable.", item);
+		} else if (Z_TYPE_P(object) == IS_ARRAY) {
+			TWIG_RUNTIME_ERROR(template TSRMLS_CC, "Impossible to invoke a method (\"%s\") on an array.", item);
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 		} else {
 			convert_to_string_ex(&object);
 
@@ -914,14 +945,23 @@ PHP_FUNCTION(twig_template_get_attributes)
 
 /*
 	// object property
+<<<<<<< HEAD
 	if (Twig_Template::METHOD_CALL !== $type && !$object instanceof Twig_Template) {
+=======
+	if (\Twig\Template::METHOD_CALL !== $type && !$object instanceof \Twig\Template) {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 		if (isset($object->$item) || array_key_exists((string) $item, $object)) {
 			if ($isDefinedTest) {
 				return true;
 			}
 
+<<<<<<< HEAD
 			if ($this->env->hasExtension('Twig_Extension_Sandbox')) {
 				$this->env->getExtension('Twig_Extension_Sandbox')->checkPropertyAllowed($object, $item);
+=======
+			if ($this->env->hasExtension('\Twig\Extension\SandboxExtension')) {
+				$this->env->getExtension('\Twig\Extension\SandboxExtension')->checkPropertyAllowed($object, $item);
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 			}
 
 			return $object->$item;
@@ -956,8 +996,13 @@ PHP_FUNCTION(twig_template_get_attributes)
 	// object method
 	if (!isset(self::$cache[$class]['methods'])) {
 		if ($object instanceof self) {
+<<<<<<< HEAD
 			$ref = new ReflectionClass($class);
 			$methods = array();
+=======
+			$ref = new \ReflectionClass($class);
+			$methods = [];
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
 			foreach ($ref->getMethods(ReflectionMethod::IS_PUBLIC) as $refMethod) {
 				$methodName = strtolower($refMethod->name);
@@ -1027,7 +1072,11 @@ PHP_FUNCTION(twig_template_get_attributes)
 			return null;
 		}
 
+<<<<<<< HEAD
 		throw new Twig_Error_Runtime(sprintf('Method "%s" for object "%s" does not exist.', $item, get_class($object)), -1, $this->getTemplateName());
+=======
+		throw new \Twig\Error\RuntimeError(sprintf('Method "%s" for object "%s" does not exist.', $item, get_class($object)), -1, $this->getTemplateName());
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 	}
 
 	if ($isDefinedTest) {
@@ -1059,8 +1108,13 @@ PHP_FUNCTION(twig_template_get_attributes)
 			RETURN_TRUE;
 		}
 /*
+<<<<<<< HEAD
 	if ($this->env->hasExtension('Twig_Extension_Sandbox')) {
 		$this->env->getExtension('Twig_Extension_Sandbox')->checkMethodAllowed($object, $method);
+=======
+	if ($this->env->hasExtension('\Twig\Extension\SandboxExtension')) {
+		$this->env->getExtension('\Twig\Extension\SandboxExtension')->checkMethodAllowed($object, $method);
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 	}
 */
 		MAKE_STD_ZVAL(zmethod);
@@ -1079,8 +1133,13 @@ PHP_FUNCTION(twig_template_get_attributes)
 	// Some objects throw exceptions when they have __call, and the method we try
 	// to call is not supported. If ignoreStrictCheck is true, we should return null.
 	try {
+<<<<<<< HEAD
 	    $ret = call_user_func_array(array($object, $method), $arguments);
 	} catch (BadMethodCallException $e) {
+=======
+	    $ret = call_user_func_array([$object, $method], $arguments);
+	} catch (\BadMethodCallException $e) {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 	    if ($call && ($ignoreStrictCheck || !$this->env->isStrictVariables())) {
 	        return null;
 	    }
@@ -1115,7 +1174,11 @@ PHP_FUNCTION(twig_template_get_attributes)
 		}
 		@trigger_error($message, E_USER_DEPRECATED);
 
+<<<<<<< HEAD
 		return $ret === '' ? '' : new Twig_Markup($ret, $this->env->getCharset());
+=======
+		return $ret === '' ? '' : new \Twig\Markup($ret, $this->env->getCharset());
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 	}
 
 	return $ret;

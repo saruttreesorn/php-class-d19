@@ -2,17 +2,34 @@
 "name" autoescape strategy
 --TEMPLATE--
 {{ br -}}
+<<<<<<< HEAD
 {{ include('index.html.twig') -}}
 {{ include('index.txt.twig') -}}
+=======
+{{ include('index.js.twig') -}}
+{{ include('index.html.twig') -}}
+{{ include('index.txt.twig') -}}
+--TEMPLATE(index.js.twig)--
+{{ br -}}
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --TEMPLATE(index.html.twig)--
 {{ br -}}
 --TEMPLATE(index.txt.twig)--
 {{ br -}}
 --DATA--
+<<<<<<< HEAD
 return array('br' => '<br />')
 --CONFIG--
 return array('autoescape' => 'name')
 --EXPECT--
 &lt;br /&gt;
+=======
+return ['br' => '<br />']
+--CONFIG--
+return ['autoescape' => 'name']
+--EXPECT--
+&lt;br /&gt;
+\u003Cbr\u0020\/\u003E
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 &lt;br /&gt;
 <br />

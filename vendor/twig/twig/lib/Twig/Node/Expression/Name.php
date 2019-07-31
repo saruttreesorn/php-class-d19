@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -96,5 +97,14 @@ class Twig_Node_Expression_Name extends Twig_Node_Expression
     public function isSimple()
     {
         return !$this->isSpecial() && !$this->getAttribute('is_defined_test');
+=======
+use Twig\Node\Expression\NameExpression;
+
+class_exists('Twig\Node\Expression\NameExpression');
+
+if (\false) {
+    class Twig_Node_Expression_Name extends NameExpression
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

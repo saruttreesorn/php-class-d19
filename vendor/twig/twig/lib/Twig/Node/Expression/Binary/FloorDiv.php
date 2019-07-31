@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -20,5 +21,14 @@ class Twig_Node_Expression_Binary_FloorDiv extends Twig_Node_Expression_Binary
     public function operator(Twig_Compiler $compiler)
     {
         return $compiler->raw('/');
+=======
+use Twig\Node\Expression\Binary\FloorDivBinary;
+
+class_exists('Twig\Node\Expression\Binary\FloorDivBinary');
+
+if (\false) {
+    class Twig_Node_Expression_Binary_FloorDiv extends FloorDivBinary
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -27,5 +28,14 @@ class Twig_Sandbox_SecurityNotAllowedFunctionError extends Twig_Sandbox_Security
     public function getFunctionName()
     {
         return $this->functionName;
+=======
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+
+class_exists('Twig\Sandbox\SecurityNotAllowedFunctionError');
+
+if (\false) {
+    class Twig_Sandbox_SecurityNotAllowedFunctionError extends SecurityNotAllowedFunctionError
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

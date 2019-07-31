@@ -6,7 +6,11 @@
 {{ 1 is not even ? 'ok' : 'ko' }}
 {{ 2 is not even ? 'ko' : 'ok' }}
 --DATA--
+<<<<<<< HEAD
 return array()
+=======
+return []
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 ok
 ok

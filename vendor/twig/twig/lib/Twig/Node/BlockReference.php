@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -28,5 +29,14 @@ class Twig_Node_BlockReference extends Twig_Node implements Twig_NodeOutputInter
             ->addDebugInfo($this)
             ->write(sprintf("\$this->displayBlock('%s', \$context, \$blocks);\n", $this->getAttribute('name')))
         ;
+=======
+use Twig\Node\BlockReferenceNode;
+
+class_exists('Twig\Node\BlockReferenceNode');
+
+if (\false) {
+    class Twig_Node_BlockReference extends BlockReferenceNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

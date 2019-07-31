@@ -3,6 +3,12 @@ Twig does not allow to use two-word named operators as variable names
 --TEMPLATE--
 {{ starts with }}
 --DATA--
+<<<<<<< HEAD
 return array()
 --EXCEPTION--
 Twig_Error_Syntax: Unexpected token "operator" of value "starts with" in "index.twig" at line 2.
+=======
+return []
+--EXCEPTION--
+Twig\Error\SyntaxError: Unexpected token "operator" of value "starts with" in "index.twig" at line 2.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9

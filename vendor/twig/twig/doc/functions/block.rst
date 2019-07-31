@@ -10,7 +10,11 @@
 When a template uses inheritance and if you want to print a block multiple
 times, use the ``block`` function:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     <title>{% block title %}{% endblock %}</title>
 
@@ -18,17 +22,28 @@ times, use the ``block`` function:
 
     {% block body %}{% endblock %}
 
+<<<<<<< HEAD
 The ``block`` function can also be used to display one block of another
 template:
 
 .. code-block:: jinja
+=======
+The ``block`` function can also be used to display one block from another
+template:
+
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ block("title", "common_blocks.twig") }}
 
 Use the ``defined`` test to check if a block exists in the context of the
 current template:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% if block("footer") is defined %}
         ...

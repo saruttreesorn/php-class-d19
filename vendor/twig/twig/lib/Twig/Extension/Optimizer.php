@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -29,5 +30,14 @@ class Twig_Extension_Optimizer extends Twig_Extension
     public function getName()
     {
         return 'optimizer';
+=======
+use Twig\Extension\OptimizerExtension;
+
+class_exists('Twig\Extension\OptimizerExtension');
+
+if (\false) {
+    class Twig_Extension_Optimizer extends OptimizerExtension
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

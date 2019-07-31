@@ -9,12 +9,20 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 class Twig_Tests_TokenStreamTest extends PHPUnit_Framework_TestCase
+=======
+use Twig\Token;
+use Twig\TokenStream;
+
+class Twig_Tests_TokenStreamTest extends \PHPUnit\Framework\TestCase
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 {
     protected static $tokens;
 
     protected function setUp()
     {
+<<<<<<< HEAD
         self::$tokens = array(
             new Twig_Token(Twig_Token::TEXT_TYPE, 1, 1),
             new Twig_Token(Twig_Token::TEXT_TYPE, 2, 1),
@@ -25,6 +33,18 @@ class Twig_Tests_TokenStreamTest extends PHPUnit_Framework_TestCase
             new Twig_Token(Twig_Token::TEXT_TYPE, 7, 1),
             new Twig_Token(Twig_Token::EOF_TYPE, 0, 1),
         );
+=======
+        self::$tokens = [
+            new Token(Token::TEXT_TYPE, 1, 1),
+            new Token(Token::TEXT_TYPE, 2, 1),
+            new Token(Token::TEXT_TYPE, 3, 1),
+            new Token(Token::TEXT_TYPE, 4, 1),
+            new Token(Token::TEXT_TYPE, 5, 1),
+            new Token(Token::TEXT_TYPE, 6, 1),
+            new Token(Token::TEXT_TYPE, 7, 1),
+            new Token(Token::EOF_TYPE, 0, 1),
+        ];
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 
     /**
@@ -32,7 +52,11 @@ class Twig_Tests_TokenStreamTest extends PHPUnit_Framework_TestCase
      */
     public function testLegacyConstructorSignature()
     {
+<<<<<<< HEAD
         $stream = new Twig_TokenStream(array(), 'foo', '{{ foo }}');
+=======
+        $stream = new TokenStream([], 'foo', '{{ foo }}');
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
         $this->assertEquals('foo', $stream->getFilename());
         $this->assertEquals('{{ foo }}', $stream->getSource());
         $this->assertEquals('foo', $stream->getSourceContext()->getName());
@@ -41,8 +65,13 @@ class Twig_Tests_TokenStreamTest extends PHPUnit_Framework_TestCase
 
     public function testNext()
     {
+<<<<<<< HEAD
         $stream = new Twig_TokenStream(self::$tokens);
         $repr = array();
+=======
+        $stream = new TokenStream(self::$tokens);
+        $repr = [];
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
         while (!$stream->isEOF()) {
             $token = $stream->next();
 
@@ -52,6 +81,7 @@ class Twig_Tests_TokenStreamTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+<<<<<<< HEAD
      * @expectedException Twig_Error_Syntax
      * @expectedMessage   Unexpected end of template
      */
@@ -60,12 +90,23 @@ class Twig_Tests_TokenStreamTest extends PHPUnit_Framework_TestCase
         $stream = new Twig_TokenStream(array(
             new Twig_Token(Twig_Token::BLOCK_START_TYPE, 1, 1),
         ));
+=======
+     * @expectedException        \Twig\Error\SyntaxError
+     * @expectedExceptionMessage Unexpected end of template
+     */
+    public function testEndOfTemplateNext()
+    {
+        $stream = new TokenStream([
+            new Token(Token::BLOCK_START_TYPE, 1, 1),
+        ]);
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
         while (!$stream->isEOF()) {
             $stream->next();
         }
     }
 
     /**
+<<<<<<< HEAD
      * @expectedException Twig_Error_Syntax
      * @expectedMessage   Unexpected end of template
      */
@@ -74,6 +115,16 @@ class Twig_Tests_TokenStreamTest extends PHPUnit_Framework_TestCase
         $stream = new Twig_TokenStream(array(
             new Twig_Token(Twig_Token::BLOCK_START_TYPE, 1, 1),
         ));
+=======
+     * @expectedException        \Twig\Error\SyntaxError
+     * @expectedExceptionMessage Unexpected end of template
+     */
+    public function testEndOfTemplateLook()
+    {
+        $stream = new TokenStream([
+            new Token(Token::BLOCK_START_TYPE, 1, 1),
+        ]);
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
         while (!$stream->isEOF()) {
             $stream->look();
             $stream->next();

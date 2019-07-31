@@ -7,7 +7,11 @@
 {% endwith %}
 {{ foo }}{{ bar }}
 --DATA--
+<<<<<<< HEAD
 return array('foo' => 'foo', 'bar' => 'bar')
+=======
+return ['foo' => 'foo', 'bar' => 'bar']
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 fooBAZ
 foobar

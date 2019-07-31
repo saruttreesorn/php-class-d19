@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -91,5 +92,14 @@ class Twig_Loader_Array implements Twig_LoaderInterface, Twig_ExistsLoaderInterf
         }
 
         return true;
+=======
+use Twig\Loader\ArrayLoader;
+
+class_exists('Twig\Loader\ArrayLoader');
+
+if (\false) {
+    class Twig_Loader_Array extends ArrayLoader
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

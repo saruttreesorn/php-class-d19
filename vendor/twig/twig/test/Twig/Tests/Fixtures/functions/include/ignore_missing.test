@@ -6,5 +6,9 @@
 {{ include("foo.twig", ignore_missing = true, variables = {}) }}
 {{ include("foo.twig", ignore_missing = true, variables = {}, with_context = true) }}
 --DATA--
+<<<<<<< HEAD
 return array()
+=======
+return []
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -61,5 +62,14 @@ abstract class Twig_Extension implements Twig_ExtensionInterface
     public function getName()
     {
         return get_class($this);
+=======
+use Twig\Extension\AbstractExtension;
+
+class_exists('Twig\Extension\AbstractExtension');
+
+if (\false) {
+    class Twig_Extension extends AbstractExtension
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

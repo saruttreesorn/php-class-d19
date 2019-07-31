@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -38,4 +39,14 @@ interface Twig_NodeVisitorInterface
      * @return int The priority level
      */
     public function getPriority();
+=======
+use Twig\NodeVisitor\NodeVisitorInterface;
+
+class_exists('Twig\NodeVisitor\NodeVisitorInterface');
+
+if (\false) {
+    class Twig_NodeVisitorInterface extends NodeVisitorInterface
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

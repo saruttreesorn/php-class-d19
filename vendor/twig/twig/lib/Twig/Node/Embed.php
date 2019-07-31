@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -40,5 +41,14 @@ class Twig_Node_Embed extends Twig_Node_Include
             ->string($this->getAttribute('index'))
             ->raw(')')
         ;
+=======
+use Twig\Node\EmbedNode;
+
+class_exists('Twig\Node\EmbedNode');
+
+if (\false) {
+    class Twig_Node_Embed extends EmbedNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

@@ -38,7 +38,11 @@ Twig supports array notation
 {{ ary|keys|join(',') }}
 {{ ary|join(',') }}
 --DATA--
+<<<<<<< HEAD
 return array('bar' => 'bar', 'foo' => array('bar' => 'bar'))
+=======
+return ['bar' => 'bar', 'foo' => ['bar' => 'bar']]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 1,2
 foo,bar

@@ -9,6 +9,7 @@
   NOTHING
 {% endif %}
 --DATA--
+<<<<<<< HEAD
 return array('a' => 'a')
 --EXPECT--
   a
@@ -18,5 +19,16 @@ return array('b' => 'b')
   b
 --DATA--
 return array()
+=======
+return ['a' => 'a']
+--EXPECT--
+  a
+--DATA--
+return ['b' => 'b']
+--EXPECT--
+  b
+--DATA--
+return []
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
   NOTHING

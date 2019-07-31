@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -28,5 +29,14 @@ class Twig_TokenParser_Do extends Twig_TokenParser
     public function getTag()
     {
         return 'do';
+=======
+use Twig\TokenParser\DoTokenParser;
+
+class_exists('Twig\TokenParser\DoTokenParser');
+
+if (\false) {
+    class Twig_TokenParser_Do extends DoTokenParser
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

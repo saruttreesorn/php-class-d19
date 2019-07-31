@@ -19,7 +19,11 @@ class UserForAutoEscapeTest
      return 'Fabien<br />';
   }
 }
+<<<<<<< HEAD
 return array('user' => new UserForAutoEscapeTest())
+=======
+return ['user' => new UserForAutoEscapeTest()]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 Fabien&lt;br /&gt;
 fabien&lt;br /&gt;

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -49,5 +50,14 @@ class Twig_Error_Syntax extends Twig_Error
         asort($alternatives);
 
         return array_keys($alternatives);
+=======
+use Twig\Error\SyntaxError;
+
+class_exists('Twig\Error\SyntaxError');
+
+if (\false) {
+    class Twig_Error_Syntax extends SyntaxError
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

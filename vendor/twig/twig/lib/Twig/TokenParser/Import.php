@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -35,5 +36,14 @@ class Twig_TokenParser_Import extends Twig_TokenParser
     public function getTag()
     {
         return 'import';
+=======
+use Twig\TokenParser\ImportTokenParser;
+
+class_exists('Twig\TokenParser\ImportTokenParser');
+
+if (\false) {
+    class Twig_TokenParser_Import extends ImportTokenParser
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

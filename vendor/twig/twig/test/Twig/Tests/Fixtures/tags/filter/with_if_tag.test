@@ -20,7 +20,11 @@ FOO
 
 {% endfilter %}
 --DATA--
+<<<<<<< HEAD
 return array('items' => array('a', 'b'))
+=======
+return ['items' => ['a', 'b']]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 A, B
 

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -27,5 +28,14 @@ class Twig_Node_Expression_Conditional extends Twig_Node_Expression
             ->subcompile($this->getNode('expr3'))
             ->raw('))')
         ;
+=======
+use Twig\Node\Expression\ConditionalExpression;
+
+class_exists('Twig\Node\Expression\ConditionalExpression');
+
+if (\false) {
+    class Twig_Node_Expression_Conditional extends ConditionalExpression
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

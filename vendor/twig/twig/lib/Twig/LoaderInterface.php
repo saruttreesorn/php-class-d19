@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -52,4 +53,14 @@ interface Twig_LoaderInterface
      * @throws Twig_Error_Loader When $name is not found
      */
     public function isFresh($name, $time);
+=======
+use Twig\Loader\LoaderInterface;
+
+class_exists('Twig\Loader\LoaderInterface');
+
+if (\false) {
+    class Twig_LoaderInterface extends LoaderInterface
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

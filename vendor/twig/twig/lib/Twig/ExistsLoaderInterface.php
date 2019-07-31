@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -26,4 +27,14 @@ interface Twig_ExistsLoaderInterface
      * @return bool If the template source code is handled by this loader or not
      */
     public function exists($name);
+=======
+use Twig\Loader\ExistsLoaderInterface;
+
+class_exists('Twig\Loader\ExistsLoaderInterface');
+
+if (\false) {
+    class Twig_ExistsLoaderInterface extends ExistsLoaderInterface
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

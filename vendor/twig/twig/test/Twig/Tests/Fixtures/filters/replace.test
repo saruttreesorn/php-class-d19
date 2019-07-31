@@ -5,7 +5,11 @@
 {{ 'I like single replace operation only %that%'|replace({'%that%' : '%that%1'}) }}
 {{ 'I like %this% and %that%.'|replace(traversable) }}
 --DATA--
+<<<<<<< HEAD
 return array('traversable' => new ArrayObject(array('%this%' => 'foo', '%that%' => 'bar')))
+=======
+return ['traversable' => new \ArrayObject(['%this%' => 'foo', '%that%' => 'bar'])]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 I liké foo and bar.
 I like single replace operation only %that%1

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -45,5 +46,14 @@ class Twig_TokenParser_Spaceless extends Twig_TokenParser
     public function getTag()
     {
         return 'spaceless';
+=======
+use Twig\TokenParser\SpacelessTokenParser;
+
+class_exists('Twig\TokenParser\SpacelessTokenParser');
+
+if (\false) {
+    class Twig_TokenParser_Spaceless extends SpacelessTokenParser
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

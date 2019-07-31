@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -46,5 +47,14 @@ class Twig_TokenParser_With extends Twig_TokenParser
     public function getTag()
     {
         return 'with';
+=======
+use Twig\TokenParser\WithTokenParser;
+
+class_exists('Twig\TokenParser\WithTokenParser');
+
+if (\false) {
+    class Twig_TokenParser_With extends WithTokenParser
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -34,5 +35,14 @@ class Twig_Error_Loader extends Twig_Error
         }
         $this->appendMessage($message);
         $this->setTemplateLine(false);
+=======
+use Twig\Error\LoaderError;
+
+class_exists('Twig\Error\LoaderError');
+
+if (\false) {
+    class Twig_Error_Loader extends LoaderError
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

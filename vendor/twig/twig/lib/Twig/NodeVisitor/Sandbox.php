@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -71,5 +72,14 @@ class Twig_NodeVisitor_Sandbox extends Twig_BaseNodeVisitor
     public function getPriority()
     {
         return 0;
+=======
+use Twig\NodeVisitor\SandboxNodeVisitor;
+
+class_exists('Twig\NodeVisitor\SandboxNodeVisitor');
+
+if (\false) {
+    class Twig_NodeVisitor_Sandbox extends SandboxNodeVisitor
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

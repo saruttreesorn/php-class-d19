@@ -3,6 +3,10 @@ Twig supports grouping of expressions
 --TEMPLATE--
 {{ (2 + 2) / 2 }}
 --DATA--
+<<<<<<< HEAD
 return array()
+=======
+return []
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 2

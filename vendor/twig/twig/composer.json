@@ -3,7 +3,11 @@
     "type": "library",
     "description": "Twig, the flexible, fast, and secure template language for PHP",
     "keywords": ["templating"],
+<<<<<<< HEAD
     "homepage": "http://twig.sensiolabs.org",
+=======
+    "homepage": "https://twig.symfony.com",
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -14,7 +18,11 @@
         },
         {
             "name": "Twig Team",
+<<<<<<< HEAD
             "homepage": "http://twig.sensiolabs.org/contributors",
+=======
+            "homepage": "https://twig.symfony.com/contributors",
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
             "role": "Contributors"
         },
         {
@@ -23,6 +31,7 @@
             "role": "Project Founder"
         }
     ],
+<<<<<<< HEAD
     "support": {
         "forum": "https://groups.google.com/forum/#!forum/twig-users"
     },
@@ -32,15 +41,35 @@
     "require-dev": {
         "symfony/phpunit-bridge": "~3.2",
         "symfony/debug": "~2.7"
+=======
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/polyfill-ctype": "^1.8"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^3.4.19|^4.1.8|^5.0",
+        "symfony/debug": "^2.7",
+        "psr/container": "^1.0"
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     },
     "autoload": {
         "psr-0" : {
             "Twig_" : "lib/"
+<<<<<<< HEAD
+=======
+        },
+        "psr-4" : {
+            "Twig\\" : "src/"
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
         }
     },
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-master": "1.31-dev"
+=======
+            "dev-master": "1.42-dev"
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
         }
     }
 }

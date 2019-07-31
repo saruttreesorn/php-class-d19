@@ -11,7 +11,11 @@
 
 {{ foo }}{{ bar }}
 --DATA--
+<<<<<<< HEAD
 return array()
+=======
+return []
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 foo
 foo&lt;br /&gt;

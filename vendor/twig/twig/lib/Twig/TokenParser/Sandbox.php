@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -55,5 +56,14 @@ class Twig_TokenParser_Sandbox extends Twig_TokenParser
     public function getTag()
     {
         return 'sandbox';
+=======
+use Twig\TokenParser\SandboxTokenParser;
+
+class_exists('Twig\TokenParser\SandboxTokenParser');
+
+if (\false) {
+    class Twig_TokenParser_Sandbox extends SandboxTokenParser
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

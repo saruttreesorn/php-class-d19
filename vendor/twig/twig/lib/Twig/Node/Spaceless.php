@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -31,5 +32,14 @@ class Twig_Node_Spaceless extends Twig_Node
             ->subcompile($this->getNode('body'))
             ->write("echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));\n")
         ;
+=======
+use Twig\Node\SpacelessNode;
+
+class_exists('Twig\Node\SpacelessNode');
+
+if (\false) {
+    class Twig_Node_Spaceless extends SpacelessNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -106,5 +107,14 @@ class Twig_Extension_Staging extends Twig_Extension
     public function getName()
     {
         return 'staging';
+=======
+use Twig\Extension\StagingExtension;
+
+class_exists('Twig\Extension\StagingExtension');
+
+if (\false) {
+    class Twig_Extension_Staging extends StagingExtension
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

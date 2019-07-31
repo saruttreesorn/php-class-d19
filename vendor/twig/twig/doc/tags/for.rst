@@ -4,7 +4,11 @@
 Loop over each item in a sequence. For example, to display a list of users
 provided in a variable called ``users``:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     <h1>Members</h1>
     <ul>
@@ -21,7 +25,11 @@ provided in a variable called ``users``:
 If you do need to iterate over a sequence of numbers, you can use the ``..``
 operator:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% for i in 0..10 %}
         * {{ i }}
@@ -31,7 +39,11 @@ The above snippet of code would print all numbers from 0 to 10.
 
 It can be also useful with letters:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% for letter in 'a'..'z' %}
         * {{ letter }}
@@ -39,7 +51,11 @@ It can be also useful with letters:
 
 The ``..`` operator can take any expression at both sides:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% for letter in 'a'|upper..'z'|upper %}
         * {{ letter }}
@@ -68,7 +84,11 @@ Variable              Description
 ``loop.parent``       The parent context
 ===================== =============================================================
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% for user in users %}
         {{ loop.index }} - {{ user.username }}
@@ -87,11 +107,25 @@ Variable              Description
 Adding a condition
 ------------------
 
+<<<<<<< HEAD
+=======
+.. tip::
+
+    As of Twig 1.41, use the :doc:`filter <../filters/filter>` filter instead,
+    or an ``if`` condition inside the ``for`` body (if your condition depends on
+    a variable updated inside the loop and you are not using the ``loop``
+    variable).
+
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 Unlike in PHP, it's not possible to ``break`` or ``continue`` in a loop. You
 can however filter the sequence during iteration which allows you to skip
 items. The following example skips all the users which are not active:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     <ul>
         {% for user in users if user.active %}
@@ -117,7 +151,11 @@ The `else` Clause
 If no iteration took place because the sequence was empty, you can render a
 replacement block by using ``else``:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     <ul>
         {% for user in users %}
@@ -133,7 +171,11 @@ Iterating over Keys
 By default, a loop iterates over the values of the sequence. You can iterate
 on keys by using the ``keys`` filter:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     <h1>Members</h1>
     <ul>
@@ -147,7 +189,11 @@ Iterating over Keys and Values
 
 You can also access both keys and values:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     <h1>Members</h1>
     <ul>
@@ -162,7 +208,11 @@ Iterating over a Subset
 You might want to iterate over a subset of values. This can be achieved using
 the :doc:`slice <../filters/slice>` filter:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     <h1>Top Ten Members</h1>
     <ul>

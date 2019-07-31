@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -14,5 +15,14 @@ class Twig_Node_Expression_Unary_Pos extends Twig_Node_Expression_Unary
     public function operator(Twig_Compiler $compiler)
     {
         $compiler->raw('+');
+=======
+use Twig\Node\Expression\Unary\PosUnary;
+
+class_exists('Twig\Node\Expression\Unary\PosUnary');
+
+if (\false) {
+    class Twig_Node_Expression_Unary_Pos extends PosUnary
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

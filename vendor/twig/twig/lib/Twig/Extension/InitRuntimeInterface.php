@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -19,4 +20,14 @@
  */
 interface Twig_Extension_InitRuntimeInterface
 {
+=======
+use Twig\Extension\InitRuntimeInterface;
+
+class_exists('Twig\Extension\InitRuntimeInterface');
+
+if (\false) {
+    class Twig_Extension_InitRuntimeInterface extends InitRuntimeInterface
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

@@ -4,7 +4,11 @@ dynamic filter
 {{ 'bar'|foo_path }}
 {{ 'bar'|a_foo_b_bar }}
 --DATA--
+<<<<<<< HEAD
 return array()
+=======
+return []
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 foo/bar
 a/b/bar

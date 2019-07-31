@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -47,5 +48,14 @@ class Twig_Source
     public function getPath()
     {
         return $this->path;
+=======
+use Twig\Source;
+
+class_exists('Twig\Source');
+
+if (\false) {
+    class Twig_Source extends Source
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

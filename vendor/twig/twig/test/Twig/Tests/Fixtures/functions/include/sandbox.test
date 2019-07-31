@@ -8,6 +8,12 @@
 {{ foo|e }}
 {{ foo|e }}
 --DATA--
+<<<<<<< HEAD
 return array()
 --EXCEPTION--
 Twig_Sandbox_SecurityNotAllowedFilterError: Filter "e" is not allowed in "foo.twig" at line 4.
+=======
+return []
+--EXCEPTION--
+Twig\Sandbox\SecurityNotAllowedFilterError: Filter "e" is not allowed in "foo.twig" at line 4.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9

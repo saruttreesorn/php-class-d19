@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -455,5 +456,14 @@ class Twig_Node_Module extends Twig_Node
         } else {
             throw new LogicException('Trait templates can only be constant nodes.');
         }
+=======
+use Twig\Node\ModuleNode;
+
+class_exists('Twig\Node\ModuleNode');
+
+if (\false) {
+    class Twig_Node_Module extends ModuleNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

@@ -12,9 +12,15 @@ Twig supports method calls
 {{ items.foo.in }}
 {{ items.foo.not }}
 --DATA--
+<<<<<<< HEAD
 return array('foo' => 'bar', 'items' => array('foo' => new TwigTestFoo(), 'bar' => 'foo'))
 --CONFIG--
 return array('strict_variables' => false)
+=======
+return ['foo' => 'bar', 'items' => ['foo' => new TwigTestFoo(), 'bar' => 'foo']]
+--CONFIG--
+return ['strict_variables' => false]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 foo
 foo

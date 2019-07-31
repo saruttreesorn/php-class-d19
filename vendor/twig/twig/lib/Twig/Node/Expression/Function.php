@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -39,5 +40,14 @@ class Twig_Node_Expression_Function extends Twig_Node_Expression_Call
         }
 
         $this->compileCallable($compiler);
+=======
+use Twig\Node\Expression\FunctionExpression;
+
+class_exists('Twig\Node\Expression\FunctionExpression');
+
+if (\false) {
+    class Twig_Node_Expression_Function extends FunctionExpression
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

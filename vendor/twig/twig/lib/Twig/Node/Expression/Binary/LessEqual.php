@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -13,5 +14,14 @@ class Twig_Node_Expression_Binary_LessEqual extends Twig_Node_Expression_Binary
     public function operator(Twig_Compiler $compiler)
     {
         return $compiler->raw('<=');
+=======
+use Twig\Node\Expression\Binary\LessEqualBinary;
+
+class_exists('Twig\Node\Expression\Binary\LessEqualBinary');
+
+if (\false) {
+    class Twig_Node_Expression_Binary_LessEqual extends LessEqualBinary
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -38,5 +39,14 @@ class Twig_Node_Sandbox extends Twig_Node
             ->outdent()
             ->write("}\n")
         ;
+=======
+use Twig\Node\SandboxNode;
+
+class_exists('Twig\Node\SandboxNode');
+
+if (\false) {
+    class Twig_Node_Sandbox extends SandboxNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

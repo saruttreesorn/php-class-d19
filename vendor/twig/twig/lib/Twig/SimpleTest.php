@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -67,5 +68,14 @@ class Twig_SimpleTest
     public function getAlternative()
     {
         return $this->options['alternative'];
+=======
+use Twig\TwigTest;
+
+class_exists('Twig\TwigTest');
+
+if (\false) {
+    class Twig_SimpleTest extends TwigTest
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

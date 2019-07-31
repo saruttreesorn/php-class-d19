@@ -5,6 +5,10 @@
 {% endfor %}
 {% if loop is not defined %}WORKS{% endif %}
 --DATA--
+<<<<<<< HEAD
 return array('items' => array())
+=======
+return ['items' => []]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 WORKS

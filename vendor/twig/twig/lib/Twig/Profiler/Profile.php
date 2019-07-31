@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -158,5 +159,14 @@ class Twig_Profiler_Profile implements IteratorAggregate, Serializable
     public function unserialize($data)
     {
         list($this->template, $this->name, $this->type, $this->starts, $this->ends, $this->profiles) = unserialize($data);
+=======
+use Twig\Profiler\Profile;
+
+class_exists('Twig\Profiler\Profile');
+
+if (\false) {
+    class Twig_Profiler_Profile extends Profile
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

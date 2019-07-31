@@ -11,6 +11,12 @@ BAR
 --TEMPLATE(foo.twig)--
 {% block c1 %}{% endblock %}
 --DATA--
+<<<<<<< HEAD
 return array()
 --EXCEPTION--
 Twig_Error_Runtime: Variable "nothing" does not exist in "index.twig" at line 5.
+=======
+return []
+--EXCEPTION--
+Twig\Error\RuntimeError: Variable "nothing" does not exist in "index.twig" at line 5.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9

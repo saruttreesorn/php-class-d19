@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -27,5 +28,14 @@ abstract class Twig_TokenParser implements Twig_TokenParserInterface
     public function setParser(Twig_Parser $parser)
     {
         $this->parser = $parser;
+=======
+use Twig\TokenParser\AbstractTokenParser;
+
+class_exists('Twig\TokenParser\AbstractTokenParser');
+
+if (\false) {
+    class Twig_TokenParser extends AbstractTokenParser
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

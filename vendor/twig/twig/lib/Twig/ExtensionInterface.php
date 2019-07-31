@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -84,4 +85,14 @@ interface Twig_ExtensionInterface
      * @deprecated since 1.26 (to be removed in 2.0), not used anymore internally
      */
     public function getName();
+=======
+use Twig\Extension\ExtensionInterface;
+
+class_exists('Twig\Extension\ExtensionInterface');
+
+if (\false) {
+    class Twig_ExtensionInterface extends ExtensionInterface
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

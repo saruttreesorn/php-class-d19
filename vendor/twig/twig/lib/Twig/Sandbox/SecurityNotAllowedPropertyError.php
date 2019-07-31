@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -34,5 +35,14 @@ class Twig_Sandbox_SecurityNotAllowedPropertyError extends Twig_Sandbox_Security
     public function getPropertyName()
     {
         return $this->propertyName;
+=======
+use Twig\Sandbox\SecurityNotAllowedPropertyError;
+
+class_exists('Twig\Sandbox\SecurityNotAllowedPropertyError');
+
+if (\false) {
+    class Twig_Sandbox_SecurityNotAllowedPropertyError extends SecurityNotAllowedPropertyError
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

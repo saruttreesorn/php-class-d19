@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -80,5 +81,14 @@ class Twig_Util_DeprecationCollector
         if (E_USER_DEPRECATED === $type) {
             $this->deprecations[] = $msg;
         }
+=======
+use Twig\Util\DeprecationCollector;
+
+class_exists('Twig\Util\DeprecationCollector');
+
+if (\false) {
+    class Twig_Util_DeprecationCollector extends DeprecationCollector
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

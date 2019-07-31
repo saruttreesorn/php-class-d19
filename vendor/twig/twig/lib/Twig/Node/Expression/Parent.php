@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -38,5 +39,14 @@ class Twig_Node_Expression_Parent extends Twig_Node_Expression
                 ->raw(', $context, $blocks)')
             ;
         }
+=======
+use Twig\Node\Expression\ParentExpression;
+
+class_exists('Twig\Node\Expression\ParentExpression');
+
+if (\false) {
+    class Twig_Node_Expression_Parent extends ParentExpression
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

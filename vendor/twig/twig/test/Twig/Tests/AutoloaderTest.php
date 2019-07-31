@@ -9,7 +9,11 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 class Twig_Tests_AutoloaderTest extends PHPUnit_Framework_TestCase
+=======
+class Twig_Tests_AutoloaderTest extends \PHPUnit\Framework\TestCase
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 {
     /**
      * @group legacy

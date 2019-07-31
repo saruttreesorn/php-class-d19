@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -30,5 +31,14 @@ class Twig_Node_Print extends Twig_Node implements Twig_NodeOutputInterface
             ->subcompile($this->getNode('expr'))
             ->raw(";\n")
         ;
+=======
+use Twig\Node\PrintNode;
+
+class_exists('Twig\Node\PrintNode');
+
+if (\false) {
+    class Twig_Node_Print extends PrintNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

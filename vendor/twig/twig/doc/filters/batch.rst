@@ -8,7 +8,11 @@ The ``batch`` filter "batches" items by returning a list of lists with the
 given number of items. A second parameter can be provided and used to fill in
 missing items:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% set items = ['a', 'b', 'c', 'd', 'e', 'f', 'g'] %}
 
@@ -24,7 +28,11 @@ missing items:
 
 The above example will be rendered as:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     <table>
         <tr>

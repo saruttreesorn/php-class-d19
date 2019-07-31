@@ -10,6 +10,11 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
+=======
+use Twig\TokenParser\TokenParserInterface;
+
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 /**
  * Default implementation of a token parser broker.
  *
@@ -20,6 +25,7 @@
 class Twig_TokenParserBroker implements Twig_TokenParserBrokerInterface
 {
     protected $parser;
+<<<<<<< HEAD
     protected $parsers = array();
     protected $brokers = array();
 
@@ -29,31 +35,59 @@ class Twig_TokenParserBroker implements Twig_TokenParserBrokerInterface
      * @param bool              $triggerDeprecationError
      */
     public function __construct($parsers = array(), $brokers = array(), $triggerDeprecationError = true)
+=======
+    protected $parsers = [];
+    protected $brokers = [];
+
+    /**
+     * @param array|\Traversable $parsers                 A \Traversable of Twig_TokenParserInterface instances
+     * @param array|\Traversable $brokers                 A \Traversable of Twig_TokenParserBrokerInterface instances
+     * @param bool               $triggerDeprecationError
+     */
+    public function __construct($parsers = [], $brokers = [], $triggerDeprecationError = true)
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     {
         if ($triggerDeprecationError) {
             @trigger_error('The '.__CLASS__.' class is deprecated since version 1.12 and will be removed in 2.0.', E_USER_DEPRECATED);
         }
 
         foreach ($parsers as $parser) {
+<<<<<<< HEAD
             if (!$parser instanceof Twig_TokenParserInterface) {
                 throw new LogicException('$parsers must a an array of Twig_TokenParserInterface.');
+=======
+            if (!$parser instanceof TokenParserInterface) {
+                throw new \LogicException('$parsers must a an array of Twig_TokenParserInterface.');
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
             }
             $this->parsers[$parser->getTag()] = $parser;
         }
         foreach ($brokers as $broker) {
             if (!$broker instanceof Twig_TokenParserBrokerInterface) {
+<<<<<<< HEAD
                 throw new LogicException('$brokers must a an array of Twig_TokenParserBrokerInterface.');
+=======
+                throw new \LogicException('$brokers must a an array of Twig_TokenParserBrokerInterface.');
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
             }
             $this->brokers[] = $broker;
         }
     }
 
+<<<<<<< HEAD
     public function addTokenParser(Twig_TokenParserInterface $parser)
+=======
+    public function addTokenParser(TokenParserInterface $parser)
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     {
         $this->parsers[$parser->getTag()] = $parser;
     }
 
+<<<<<<< HEAD
     public function removeTokenParser(Twig_TokenParserInterface $parser)
+=======
+    public function removeTokenParser(TokenParserInterface $parser)
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     {
         $name = $parser->getTag();
         if (isset($this->parsers[$name]) && $parser === $this->parsers[$name]) {
@@ -61,12 +95,20 @@ class Twig_TokenParserBroker implements Twig_TokenParserBrokerInterface
         }
     }
 
+<<<<<<< HEAD
     public function addTokenParserBroker(Twig_TokenParserBroker $broker)
+=======
+    public function addTokenParserBroker(self $broker)
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     {
         $this->brokers[] = $broker;
     }
 
+<<<<<<< HEAD
     public function removeTokenParserBroker(Twig_TokenParserBroker $broker)
+=======
+    public function removeTokenParserBroker(self $broker)
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     {
         if (false !== $pos = array_search($broker, $this->brokers)) {
             unset($this->brokers[$pos]);
@@ -80,7 +122,11 @@ class Twig_TokenParserBroker implements Twig_TokenParserBrokerInterface
      *
      * @param string $tag A tag name
      *
+<<<<<<< HEAD
      * @return null|Twig_TokenParserInterface A Twig_TokenParserInterface or null if no suitable TokenParser was found
+=======
+     * @return TokenParserInterface|null A Twig_TokenParserInterface or null if no suitable TokenParser was found
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
      */
     public function getTokenParser($tag)
     {

@@ -5,6 +5,7 @@ array index test
 {{ key }}
 {% endfor %}
 --DATA--
+<<<<<<< HEAD
 return array('days' => array(
     1  => array('money' => 9),
     2  => array('money' => 21),
@@ -14,6 +15,17 @@ return array('days' => array(
     19 => array('money' => 3),
     31 => array('money' => 11),
 ));
+=======
+return ['days' => [
+    1  => ['money' => 9],
+    2  => ['money' => 21],
+    3  => ['money' => 38],
+    4  => ['money' => 6],
+    18 => ['money' => 6],
+    19 => ['money' => 3],
+    31 => ['money' => 11],
+]]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 1
 2

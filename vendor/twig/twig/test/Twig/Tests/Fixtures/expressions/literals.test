@@ -10,7 +10,11 @@ Twig supports literals
 7 {{ null }}
 8 {{ NULL }}
 --DATA--
+<<<<<<< HEAD
 return array()
+=======
+return []
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 1 1
 2 1

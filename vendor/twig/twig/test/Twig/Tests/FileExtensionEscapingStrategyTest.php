@@ -9,18 +9,29 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 class Twig_Tests_FileExtensionEscapingStrategyTest extends PHPUnit_Framework_TestCase
+=======
+use Twig\FileExtensionEscapingStrategy;
+
+class Twig_Tests_FileExtensionEscapingStrategyTest extends \PHPUnit\Framework\TestCase
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 {
     /**
      * @dataProvider getGuessData
      */
     public function testGuess($strategy, $filename)
     {
+<<<<<<< HEAD
         $this->assertSame($strategy, Twig_FileExtensionEscapingStrategy::guess($filename));
+=======
+        $this->assertSame($strategy, FileExtensionEscapingStrategy::guess($filename));
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 
     public function getGuessData()
     {
+<<<<<<< HEAD
         return array(
             // default
             array('html', 'foo.html'),
@@ -47,5 +58,33 @@ class Twig_Tests_FileExtensionEscapingStrategyTest extends PHPUnit_Framework_Tes
             array(false, 'foo.txt'),
             array(false, 'foo.txt.twig'),
         );
+=======
+        return [
+            // default
+            ['html', 'foo.html'],
+            ['html', 'foo.html.twig'],
+            ['html', 'foo'],
+            ['html', 'foo.bar.twig'],
+            ['html', 'foo.txt/foo'],
+            ['html', 'foo.txt/foo.js/'],
+
+            // css
+            ['css', 'foo.css'],
+            ['css', 'foo.css.twig'],
+            ['css', 'foo.twig.css'],
+            ['css', 'foo.js.css'],
+            ['css', 'foo.js.css.twig'],
+
+            // js
+            ['js', 'foo.js'],
+            ['js', 'foo.js.twig'],
+            ['js', 'foo.txt/foo.js'],
+            ['js', 'foo.txt.twig/foo.js'],
+
+            // txt
+            [false, 'foo.txt'],
+            [false, 'foo.txt.twig'],
+        ];
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -47,5 +48,14 @@ class Twig_TokenParser_Filter extends Twig_TokenParser
     public function getTag()
     {
         return 'filter';
+=======
+use Twig\TokenParser\FilterTokenParser;
+
+class_exists('Twig\TokenParser\FilterTokenParser');
+
+if (\false) {
+    class Twig_TokenParser_Filter extends FilterTokenParser
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

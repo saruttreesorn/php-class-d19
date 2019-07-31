@@ -7,7 +7,11 @@
 The ``attribute`` function can be used to access a "dynamic" attribute of a
 variable:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ attribute(object, method) }}
     {{ attribute(object, method, arguments) }}
@@ -16,7 +20,11 @@ variable:
 In addition, the ``defined`` test can check for the existence of a dynamic
 attribute:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ attribute(object, method) is defined ? 'Method exists' : 'Method does not exist' }}
 

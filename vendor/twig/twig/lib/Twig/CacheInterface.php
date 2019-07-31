@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -53,4 +54,14 @@ interface Twig_CacheInterface
      * @return int
      */
     public function getTimestamp($key);
+=======
+use Twig\Cache\CacheInterface;
+
+class_exists('Twig\Cache\CacheInterface');
+
+if (\false) {
+    class Twig_CacheInterface extends CacheInterface
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

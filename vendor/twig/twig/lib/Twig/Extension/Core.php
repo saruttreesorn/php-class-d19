@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 if (!defined('ENT_SUBSTITUTE')) {
     // use 0 as hhvm does not support several flags yet
     define('ENT_SUBSTITUTE', 0);
@@ -1550,4 +1551,14 @@ function twig_array_batch($items, $size, $fill = null)
     }
 
     return $result;
+=======
+use Twig\Extension\CoreExtension;
+
+class_exists('Twig\Extension\CoreExtension');
+
+if (\false) {
+    class Twig_Extension_Core extends CoreExtension
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

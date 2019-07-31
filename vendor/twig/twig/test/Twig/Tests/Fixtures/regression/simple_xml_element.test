@@ -10,7 +10,11 @@ Hello '{{ images.image.0.group }}'!
     - {{ image.group }}
 {% endfor %}
 --DATA--
+<<<<<<< HEAD
 return array('images' => new SimpleXMLElement('<images><image><group myattr="example">foo</group></image><image><group>bar</group></image></images>'))
+=======
+return ['images' => new \SimpleXMLElement('<images><image><group myattr="example">foo</group></image><image><group>bar</group></image></images>')]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 Hello 'foo'!
 example

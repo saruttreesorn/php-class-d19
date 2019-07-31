@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -27,5 +28,14 @@ class Twig_Profiler_Node_LeaveProfile extends Twig_Node
             ->write("\n")
             ->write(sprintf("\$%s->leave(\$%s);\n\n", $this->getAttribute('var_name'), $this->getAttribute('var_name').'_prof'))
         ;
+=======
+use Twig\Profiler\Node\LeaveProfileNode;
+
+class_exists('Twig\Profiler\Node\LeaveProfileNode');
+
+if (\false) {
+    class Twig_Profiler_Node_LeaveProfile extends LeaveProfileNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

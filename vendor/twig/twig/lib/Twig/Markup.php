@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -33,5 +34,14 @@ class Twig_Markup implements Countable
     public function count()
     {
         return function_exists('mb_get_info') ? mb_strlen($this->content, $this->charset) : strlen($this->content);
+=======
+use Twig\Markup;
+
+class_exists('Twig\Markup');
+
+if (\false) {
+    class Twig_Markup extends Markup
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

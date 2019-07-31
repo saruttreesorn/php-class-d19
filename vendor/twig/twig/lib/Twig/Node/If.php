@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -62,5 +63,14 @@ class Twig_Node_If extends Twig_Node
         $compiler
             ->outdent()
             ->write("}\n");
+=======
+use Twig\Node\IfNode;
+
+class_exists('Twig\Node\IfNode');
+
+if (\false) {
+    class Twig_Node_If extends IfNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

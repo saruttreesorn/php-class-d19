@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -224,5 +225,14 @@ abstract class Twig_Test_IntegrationTestCase extends PHPUnit_Framework_TestCase
         }
 
         return $templates;
+=======
+use Twig\Test\IntegrationTestCase;
+
+class_exists('Twig\Test\IntegrationTestCase');
+
+if (\false) {
+    class Twig_Test_IntegrationTestCase extends IntegrationTestCase
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

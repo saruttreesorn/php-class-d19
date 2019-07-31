@@ -9,7 +9,11 @@
   </div>
 {% endfor %}
 --DATA--
+<<<<<<< HEAD
 return array('items' => array('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'))
+=======
+return ['items' => ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 <div class=row>
       <div class=item>a</div>

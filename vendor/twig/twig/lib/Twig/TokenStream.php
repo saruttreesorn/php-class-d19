@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -190,5 +191,14 @@ class Twig_TokenStream
     public function getSourceContext()
     {
         return $this->source;
+=======
+use Twig\TokenStream;
+
+class_exists('Twig\TokenStream');
+
+if (\false) {
+    class Twig_TokenStream extends TokenStream
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

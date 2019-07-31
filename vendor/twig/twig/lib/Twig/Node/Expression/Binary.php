@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -32,4 +33,14 @@ abstract class Twig_Node_Expression_Binary extends Twig_Node_Expression
     }
 
     abstract public function operator(Twig_Compiler $compiler);
+=======
+use Twig\Node\Expression\Binary\AbstractBinary;
+
+class_exists('Twig\Node\Expression\Binary\AbstractBinary');
+
+if (\false) {
+    class Twig_Node_Expression_Binary extends AbstractBinary
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

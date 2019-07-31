@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -41,5 +42,14 @@ class Twig_Profiler_Dumper_Html extends Twig_Profiler_Dumper_Text
     protected function formatTime(Twig_Profiler_Profile $profile, $percent)
     {
         return sprintf('<span style="color: %s">%.2fms/%.0f%%</span>', $percent > 20 ? self::$colors['big'] : 'auto', $profile->getDuration() * 1000, $percent);
+=======
+use Twig\Profiler\Dumper\HtmlDumper;
+
+class_exists('Twig\Profiler\Dumper\HtmlDumper');
+
+if (\false) {
+    class Twig_Profiler_Dumper_Html extends HtmlDumper
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

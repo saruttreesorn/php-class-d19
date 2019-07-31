@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -16,4 +17,14 @@
  */
 interface Twig_NodeCaptureInterface
 {
+=======
+use Twig\Node\NodeCaptureInterface;
+
+class_exists('Twig\Node\NodeCaptureInterface');
+
+if (\false) {
+    class Twig_NodeCaptureInterface extends NodeCaptureInterface
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

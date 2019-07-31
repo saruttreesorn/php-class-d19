@@ -10,6 +10,11 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
+=======
+use Twig\TokenParser\TokenParserInterface;
+
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 /**
  * Interface implemented by token parser brokers.
  *
@@ -26,19 +31,31 @@ interface Twig_TokenParserBrokerInterface
      *
      * @param string $tag A tag name
      *
+<<<<<<< HEAD
      * @return Twig_TokenParserInterface|null A Twig_TokenParserInterface or null if no suitable TokenParser was found
+=======
+     * @return TokenParserInterface|null A Twig_TokenParserInterface or null if no suitable TokenParser was found
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
      */
     public function getTokenParser($tag);
 
     /**
+<<<<<<< HEAD
      * Calls Twig_TokenParserInterface::setParser on all parsers the implementation knows of.
+=======
+     * Calls Twig\TokenParser\TokenParserInterface::setParser on all parsers the implementation knows of.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
      */
     public function setParser(Twig_ParserInterface $parser);
 
     /**
      * Gets the Twig_ParserInterface.
      *
+<<<<<<< HEAD
      * @return null|Twig_ParserInterface A Twig_ParserInterface instance or null
+=======
+     * @return Twig_ParserInterface|null A Twig_ParserInterface instance or null
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
      */
     public function getParser();
 }

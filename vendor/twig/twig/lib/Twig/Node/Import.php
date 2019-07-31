@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -45,5 +46,14 @@ class Twig_Node_Import extends Twig_Node
         }
 
         $compiler->raw(";\n");
+=======
+use Twig\Node\ImportNode;
+
+class_exists('Twig\Node\ImportNode');
+
+if (\false) {
+    class Twig_Node_Import extends ImportNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

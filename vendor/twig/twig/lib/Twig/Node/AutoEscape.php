@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -30,5 +31,14 @@ class Twig_Node_AutoEscape extends Twig_Node
     public function compile(Twig_Compiler $compiler)
     {
         $compiler->subcompile($this->getNode('body'));
+=======
+use Twig\Node\AutoEscapeNode;
+
+class_exists('Twig\Node\AutoEscapeNode');
+
+if (\false) {
+    class Twig_Node_AutoEscape extends AutoEscapeNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

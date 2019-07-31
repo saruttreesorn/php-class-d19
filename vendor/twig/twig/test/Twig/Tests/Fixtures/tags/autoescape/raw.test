@@ -5,6 +5,10 @@
 {{ var|raw }}
 {% endautoescape %}
 --DATA--
+<<<<<<< HEAD
 return array('var' => '<br />')
+=======
+return ['var' => '<br />']
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 <br />

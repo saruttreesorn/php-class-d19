@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -16,4 +17,14 @@
  */
 interface Twig_NodeOutputInterface
 {
+=======
+use Twig\Node\NodeOutputInterface;
+
+class_exists('Twig\Node\NodeOutputInterface');
+
+if (\false) {
+    class Twig_NodeOutputInterface extends NodeOutputInterface
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

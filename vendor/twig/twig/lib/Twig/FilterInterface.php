@@ -9,10 +9,19 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 /**
  * Represents a template filter.
  *
  * Use Twig_SimpleFilter instead.
+=======
+use Twig\Node\Node;
+
+/**
+ * Represents a template filter.
+ *
+ * Use \Twig\TwigFilter instead.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
  *
  * @author Fabien Potencier <fabien@symfony.com>
  *
@@ -31,7 +40,11 @@ interface Twig_FilterInterface
 
     public function needsContext();
 
+<<<<<<< HEAD
     public function getSafe(Twig_Node $filterArgs);
+=======
+    public function getSafe(Node $filterArgs);
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     public function getPreservesSafety();
 

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -46,5 +47,14 @@ class Twig_Node_ForLoop extends Twig_Node
                 ;
             }
         }
+=======
+use Twig\Node\ForLoopNode;
+
+class_exists('Twig\Node\ForLoopNode');
+
+if (\false) {
+    class Twig_Node_ForLoop extends ForLoopNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

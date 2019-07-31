@@ -7,18 +7,31 @@ will be most useful as reference to those creating Twig templates.
 Synopsis
 --------
 
+<<<<<<< HEAD
 A template is simply a text file. It can generate any text-based format (HTML,
+=======
+A template is a regular text file. It can generate any text-based format (HTML,
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 XML, CSV, LaTeX, etc.). It doesn't have a specific extension, ``.html`` or
 ``.xml`` are just fine.
 
 A template contains **variables** or **expressions**, which get replaced with
+<<<<<<< HEAD
 values when the template is evaluated, and **tags**, which control the logic
 of the template.
+=======
+values when the template is evaluated, and **tags**, which control the
+template's logic.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
 Below is a minimal template that illustrates a few basics. We will cover further
 details later on:
 
+<<<<<<< HEAD
 .. code-block:: html+jinja
+=======
+.. code-block:: html+twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     <!DOCTYPE html>
     <html>
@@ -38,8 +51,13 @@ details later on:
     </html>
 
 There are two kinds of delimiters: ``{% ... %}`` and ``{{ ... }}``. The first
+<<<<<<< HEAD
 one is used to execute statements such as for-loops, the latter prints the
 result of an expression to the template.
+=======
+one is used to execute statements such as for-loops, the latter outputs the
+result of an expression.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
 IDEs Integration
 ----------------
@@ -68,6 +86,7 @@ Variables
 ---------
 
 The application passes variables to the templates for manipulation in the
+<<<<<<< HEAD
 template. Variables may have attributes or elements you can access,
 too. The visual representation of a variable depends heavily on the application providing
 it.
@@ -89,6 +108,18 @@ access the variable attribute:
 
     {# equivalent to the non-working foo.data-foo #}
     {{ attribute(foo, 'data-foo') }}
+=======
+template. Variables may have attributes or elements you can access, too. The
+visual representation of a variable depends heavily on the application providing
+it.
+
+Use a dot (``.``) to access attributes of a variable (methods or properties of a
+PHP object, or items of a PHP array):
+
+.. code-block:: twig
+
+    {{ foo.bar }}
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
 .. note::
 
@@ -96,10 +127,13 @@ access the variable attribute:
     variable but the print statement. When accessing variables inside tags,
     don't put the braces around them.
 
+<<<<<<< HEAD
 If a variable or attribute does not exist, you will receive a ``null`` value
 when the ``strict_variables`` option is set to ``false``; alternatively, if ``strict_variables``
 is set, Twig will throw an error (see :ref:`environment options<environment_options>`).
 
+=======
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 .. sidebar:: Implementation
 
     For convenience's sake ``foo.bar`` does the following things on the PHP
@@ -113,16 +147,40 @@ is set, Twig will throw an error (see :ref:`environment options<environment_opti
     * if not, and if ``foo`` is an object, check that ``isBar`` is a valid method;
     * if not, return a ``null`` value.
 
+<<<<<<< HEAD
     ``foo['bar']`` on the other hand only works with PHP arrays:
+=======
+    Twig also supports a specific syntax for accessing items on PHP arrays,
+    ``foo['bar']``:
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     * check if ``foo`` is an array and ``bar`` a valid element;
     * if not, return a ``null`` value.
 
+<<<<<<< HEAD
+=======
+If a variable or attribute does not exist, you will receive a ``null`` value
+when the ``strict_variables`` option is set to ``false``; alternatively, if ``strict_variables``
+is set, Twig will throw an error (see :ref:`environment options<environment_options>`).
+
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 .. note::
 
     If you want to access a dynamic attribute of a variable, use the
     :doc:`attribute<functions/attribute>` function instead.
 
+<<<<<<< HEAD
+=======
+    The ``attribute`` function is also useful when the attribute contains
+    special characters (like ``-`` that would be interpreted as the minus
+    operator):
+
+    .. code-block:: twig
+
+        {# equivalent to the non-working foo.data-foo #}
+        {{ attribute(foo, 'data-foo') }}
+
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 Global Variables
 ~~~~~~~~~~~~~~~~
 
@@ -138,7 +196,11 @@ Setting Variables
 You can assign values to variables inside code blocks. Assignments use the
 :doc:`set<tags/set>` tag:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% set foo = 'foo' %}
     {% set foo = [1, 2] %}
@@ -148,18 +210,28 @@ Filters
 -------
 
 Variables can be modified by **filters**. Filters are separated from the
+<<<<<<< HEAD
 variable by a pipe symbol (``|``) and may have optional arguments in
 parentheses. Multiple filters can be chained. The output of one filter is
 applied to the next.
+=======
+variable by a pipe symbol (``|``). Multiple filters can be chained. The output
+of one filter is applied to the next.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
 The following example removes all HTML tags from the ``name`` and title-cases
 it:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ name|striptags|title }}
 
 Filters that accept arguments have parentheses around the arguments. This
+<<<<<<< HEAD
 example will join a list by commas:
 
 .. code-block:: jinja
@@ -174,10 +246,34 @@ To apply a filter on a section of code, wrap it in the
     {% filter upper %}
         This text becomes uppercase
     {% endfilter %}
+=======
+example joins the elements of a list by commas:
+
+.. code-block:: twig
+
+    {{ list|join(', ') }}
+
+To apply a filter on a section of code, wrap it with the
+:doc:`apply<tags/apply>` tag:
+
+.. code-block:: twig
+
+    {% apply upper %}
+        This text becomes uppercase
+    {% endapply %}
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
 Go to the :doc:`filters<filters/index>` page to learn more about built-in
 filters.
 
+<<<<<<< HEAD
+=======
+.. note::
+
+    The ``apply`` tag was introduced in Twig 1.40; use the ``filter`` tag with
+    previous versions.
+
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 Functions
 ---------
 
@@ -187,7 +283,11 @@ name followed by parentheses (``()``) and may have arguments.
 For instance, the ``range`` function returns a list containing an arithmetic
 progression of integers:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% for i in range(0, 3) %}
         {{ i }},
@@ -196,13 +296,22 @@ progression of integers:
 Go to the :doc:`functions<functions/index>` page to learn more about the
 built-in functions.
 
+<<<<<<< HEAD
+=======
+.. _named-arguments:
+
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 Named Arguments
 ---------------
 
 .. versionadded:: 1.12
     Support for named arguments was added in Twig 1.12.
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% for i in range(low=1, high=10, step=2) %}
         {{ i }},
@@ -211,7 +320,11 @@ Named Arguments
 Using named arguments makes your templates more explicit about the meaning of
 the values you pass as arguments:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ data|convert_encoding('UTF-8', 'iso-2022-jp') }}
 
@@ -222,7 +335,11 @@ the values you pass as arguments:
 Named arguments also allow you to skip some arguments for which you don't want
 to change the default value:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {# the first argument is the date format, which defaults to the global date format if null is passed #}
     {{ "now"|date(null, "Europe/Paris") }}
@@ -233,7 +350,11 @@ to change the default value:
 You can also use both positional and named arguments in one call, in which
 case positional arguments must always come before named arguments:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ "now"|date('d/m/Y H:i', timezone="Europe/Paris") }}
 
@@ -253,7 +374,11 @@ blocks.
 For example, to display a list of users provided in a variable called
 ``users``, use the :doc:`for<tags/for>` tag:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     <h1>Members</h1>
     <ul>
@@ -264,7 +389,11 @@ For example, to display a list of users provided in a variable called
 
 The :doc:`if<tags/if>` tag can be used to test an expression:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% if users|length > 0 %}
         <ul>
@@ -283,7 +412,11 @@ To comment-out part of a line in a template, use the comment syntax ``{# ...
 #}``. This is useful for debugging or to add information for other template
 designers or yourself:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {# note: disabled template because we no longer use this
         {% for user in users %}
@@ -297,7 +430,11 @@ Including other Templates
 The :doc:`include<functions/include>` function is useful to include a template
 and return the rendered content of that template into the current one:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ include('sidebar.html') }}
 
@@ -305,7 +442,11 @@ By default, included templates have access to the same context as the template
 which includes them. This means that any variable defined in the main template
 will be available in the included template too:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% for box in boxes %}
         {{ include('render_box.html') }}
@@ -313,11 +454,19 @@ will be available in the included template too:
 
 The included template ``render_box.html`` is able to access the ``box`` variable.
 
+<<<<<<< HEAD
 The filename of the template depends on the template loader. For instance, the
 ``Twig_Loader_Filesystem`` allows you to access other templates by giving the
 filename. You can access templates in subdirectories with a slash:
 
 .. code-block:: jinja
+=======
+The name of the template depends on the template loader. For instance, the
+``\Twig\Loader\FilesystemLoader`` allows you to access other templates by giving the
+filename. You can access templates in subdirectories with a slash:
+
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ include('sections/articles/sidebar.html') }}
 
@@ -331,6 +480,7 @@ allows you to build a base "skeleton" template that contains all the common
 elements of your site and defines **blocks** that child templates can
 override.
 
+<<<<<<< HEAD
 Sounds complicated but it is very basic. It's easier to understand it by
 starting with an example.
 
@@ -338,6 +488,14 @@ Let's define a base template, ``base.html``, which defines a simple HTML
 skeleton document that you might use for a simple two-column page:
 
 .. code-block:: html+jinja
+=======
+It's easier to understand the concept by starting with an example.
+
+Let's define a base template, ``base.html``, which defines an HTML skeleton
+document that might be used for a two-column page:
+
+.. code-block:: html+twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     <!DOCTYPE html>
     <html>
@@ -364,7 +522,11 @@ template.
 
 A child template might look like this:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% extends "base.html" %}
 
@@ -394,7 +556,11 @@ It's possible to render the contents of the parent block by using the
 :doc:`parent<functions/parent>` function. This gives back the results of the
 parent block:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% block sidebar %}
         <h3>Table Of Contents</h3>
@@ -410,9 +576,14 @@ parent block:
 
 .. note::
 
+<<<<<<< HEAD
     Twig also supports multiple inheritance with the so called horizontal reuse
     with the help of the :doc:`use<tags/use>` tag. This is an advanced feature
     hardly ever needed in regular templates.
+=======
+    Twig also supports multiple inheritance via "horizontal reuse" with the help
+    of the :doc:`use<tags/use>` tag.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
 HTML Escaping
 -------------
@@ -430,6 +601,7 @@ The automatic escaping strategy can be configured via the
 Working with Manual Escaping
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+<<<<<<< HEAD
 If manual escaping is enabled, it is **your** responsibility to escape
 variables if needed. What to escape? Any variable you don't trust.
 
@@ -437,14 +609,28 @@ Escaping works by piping the variable through the
 :doc:`escape<filters/escape>` or ``e`` filter:
 
 .. code-block:: jinja
+=======
+If manual escaping is enabled, it is **your** responsibility to escape variables
+if needed. What to escape? Any variable that comes from an untrusted source.
+
+Escaping works by using the :doc:`escape<filters/escape>` or ``e`` filter:
+
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ user.username|e }}
 
 By default, the ``escape`` filter uses the ``html`` strategy, but depending on
+<<<<<<< HEAD
 the escaping context, you might want to explicitly use any other available
 strategies:
 
 .. code-block:: jinja
+=======
+the escaping context, you might want to explicitly use an other strategy:
+
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ user.username|e('js') }}
     {{ user.username|e('css') }}
@@ -458,7 +644,11 @@ Whether automatic escaping is enabled or not, you can mark a section of a
 template to be escaped or not by using the :doc:`autoescape<tags/autoescape>`
 tag:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% autoescape %}
         Everything will be automatically escaped in this block (using the HTML strategy)
@@ -468,7 +658,11 @@ By default, auto-escaping uses the ``html`` escaping strategy. If you output
 variables in other contexts, you need to explicitly escape them with the
 appropriate escaping strategy:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% autoescape 'js' %}
         Everything will be automatically escaped in this block (using the JS strategy)
@@ -485,7 +679,11 @@ variable you have to use a trick.
 The easiest way is to output the variable delimiter (``{{``) by using a variable
 expression:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ '{{' }}
 
@@ -498,6 +696,7 @@ Macros
 .. versionadded:: 1.12
     Support for default argument values was added in Twig 1.12.
 
+<<<<<<< HEAD
 Macros are comparable with functions in regular programming languages. They
 are useful to reuse often used HTML fragments to not repeat yourself.
 
@@ -544,12 +743,18 @@ macro call:
 
 If extra positional arguments are passed to a macro call, they end up in the
 special ``varargs`` variable as a list of values.
+=======
+Macros are comparable with functions in regular programming languages. They are
+useful to reuse HTML fragments to not repeat yourself. They are described in the
+:doc:`macro<tags/macro>` tag documentation.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
 .. _twig-expressions:
 
 Expressions
 -----------
 
+<<<<<<< HEAD
 Twig allows expressions everywhere. These work very similar to regular PHP and
 even if you're not working with PHP you should feel comfortable with it.
 
@@ -562,6 +767,20 @@ even if you're not working with PHP you should feel comfortable with it.
     ``//``, ``%``, ``is``, ``**``, ``|``, ``[]``, and ``.``:
 
     .. code-block:: jinja
+=======
+Twig allows expressions everywhere.
+
+.. note::
+
+    The operator precedence is as follows, with the lowest-precedence operators
+    listed first: ``?:`` (ternary operator), ``b-and``, ``b-xor``, ``b-or``,
+    ``or``, ``and``, ``==``, ``!=``, ``<``, ``>``, ``>=``, ``<=``, ``in``,
+    ``matches``, ``starts with``, ``ends with``, ``..``, ``+``, ``-``, ``~``,
+    ``*``, ``/``, ``//``, ``%``, ``is`` (tests), ``**``, ``??``, ``|``
+    (filters), ``[]``, and ``.``.
+
+    .. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
         {% set greeting = 'Hello ' %}
         {% set name = 'Fabien' %}
@@ -589,7 +808,11 @@ exist:
   backslash (e.g. ``'c:\Program Files'``) escape it by doubling it
   (e.g. ``'c:\\Program Files'``).
 
+<<<<<<< HEAD
 * ``42`` / ``42.23``: Integers and floating point numbers are created by just
+=======
+* ``42`` / ``42.23``: Integers and floating point numbers are created by
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
   writing the number down. If a dot is present the number is a float,
   otherwise an integer.
 
@@ -599,7 +822,11 @@ exist:
 * ``{"foo": "bar"}``: Hashes are defined by a list of keys and values
   separated by a comma (``,``) and wrapped with curly braces (``{}``):
 
+<<<<<<< HEAD
   .. code-block:: jinja
+=======
+  .. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {# keys as string #}
     { 'foo': 'foo', 'bar': 'bar' }
@@ -611,7 +838,12 @@ exist:
     { 2: 'foo', 4: 'bar' }
 
     {# keys as expressions (the expression must be enclosed into parentheses) -- as of Twig 1.5 #}
+<<<<<<< HEAD
     { (1 + 1): 'foo', (a ~ 'b'): 'bar' }
+=======
+    {% set foo = 'foo' %}
+    { (foo): 'foo', (1 + 1): 'bar', (foo ~ 'b'): 'baz' }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
 * ``true`` / ``false``: ``true`` represents the true value, ``false``
   represents the false value.
@@ -621,22 +853,37 @@ exist:
 
 Arrays and hashes can be nested:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% set foo = [1, {"foo": "bar"}] %}
 
 .. tip::
 
     Using double-quoted or single-quoted strings has no impact on performance
+<<<<<<< HEAD
     but string interpolation is only supported in double-quoted strings.
+=======
+    but :ref:`string interpolation <templates-string-interpolation>` is only
+    supported in double-quoted strings.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
 Math
 ~~~~
 
+<<<<<<< HEAD
 Twig allows you to calculate with values. This is rarely useful in templates
 but exists for completeness' sake. The following operators are supported:
 
 * ``+``: Adds two objects together (the operands are casted to numbers). ``{{
+=======
+Twig allows you to do math in templates; the following operators are supported:
+
+* ``+``: Adds two numbers together (the operands are casted to numbers). ``{{
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
   1 + 1 }}`` is ``2``.
 
 * ``-``: Subtracts the second number from the first one. ``{{ 3 - 2 }}`` is
@@ -658,6 +905,11 @@ but exists for completeness' sake. The following operators are supported:
 * ``**``: Raises the left operand to the power of the right operand. ``{{ 2 **
   3 }}`` would return ``8``.
 
+<<<<<<< HEAD
+=======
+.. _template_logic:
+
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 Logic
 ~~~~~
 
@@ -673,7 +925,11 @@ You can combine multiple expressions with the following operators:
 
 .. note::
 
+<<<<<<< HEAD
     Twig also support bitwise operators (``b-and``, ``b-xor``, and ``b-or``).
+=======
+    Twig also supports bitwise operators (``b-and``, ``b-xor``, and ``b-or``).
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
 .. note::
 
@@ -688,7 +944,11 @@ The following comparison operators are supported in any expression: ``==``,
 You can also check if a string ``starts with`` or ``ends with`` another
 string:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% if 'Fabien' starts with 'F' %}
     {% endif %}
@@ -701,7 +961,11 @@ string:
     For complex string comparisons, the ``matches`` operator allows you to use
     `regular expressions`_:
 
+<<<<<<< HEAD
     .. code-block:: jinja
+=======
+    .. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
         {% if phone matches '/^[\\d\\.]+$/' %}
         {% endif %}
@@ -709,11 +973,18 @@ string:
 Containment Operator
 ~~~~~~~~~~~~~~~~~~~~
 
+<<<<<<< HEAD
 The ``in`` operator performs containment test.
 
 It returns ``true`` if the left operand is contained in the right:
 
 .. code-block:: jinja
+=======
+The ``in`` operator performs containment test. It returns ``true`` if the left
+operand is contained in the right:
+
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {# returns true #}
 
@@ -728,7 +999,11 @@ It returns ``true`` if the left operand is contained in the right:
 
 To perform a negative test, use the ``not in`` operator:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% if 1 not in [1, 2, 3] %}
 
@@ -741,7 +1016,11 @@ Test Operator
 The ``is`` operator performs tests. Tests can be used to test a variable against
 a common expression. The right operand is name of the test:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {# find out if a variable is odd #}
 
@@ -749,13 +1028,21 @@ a common expression. The right operand is name of the test:
 
 Tests can accept arguments too:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% if post.status is constant('Post::PUBLISHED') %}
 
 Tests can be negated by using the ``is not`` operator:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% if post.status is not constant('Post::PUBLISHED') %}
 
@@ -776,9 +1063,15 @@ The following operators don't fit into any of the other categories:
 * ``|``: Applies a filter.
 
 * ``..``: Creates a sequence based on the operand before and after the operator
+<<<<<<< HEAD
   (this is just syntactic sugar for the :doc:`range<functions/range>` function):
 
   .. code-block:: jinja
+=======
+  (this is syntactic sugar for the :doc:`range<functions/range>` function):
+
+  .. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
       {{ 1..5 }}
 
@@ -788,7 +1081,11 @@ The following operators don't fit into any of the other categories:
   Note that you must use parentheses when combining it with the filter operator
   due to the :ref:`operator precedence rules <twig-expressions>`:
 
+<<<<<<< HEAD
   .. code-block:: jinja
+=======
+  .. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
       (1..5)|join(', ')
 
@@ -796,11 +1093,19 @@ The following operators don't fit into any of the other categories:
   " ~ name ~ "!" }}`` would return (assuming ``name`` is ``'John'``) ``Hello
   John!``.
 
+<<<<<<< HEAD
 * ``.``, ``[]``: Gets an attribute of an object.
 
 * ``?:``: The ternary operator:
 
   .. code-block:: jinja
+=======
+* ``.``, ``[]``: Gets an attribute of a variable.
+
+* ``?:``: The ternary operator:
+
+  .. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
       {{ foo ? 'yes' : 'no' }}
 
@@ -810,11 +1115,20 @@ The following operators don't fit into any of the other categories:
 
 * ``??``: The null-coalescing operator:
 
+<<<<<<< HEAD
   .. code-block:: jinja
+=======
+  .. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
       {# returns the value of foo if it is defined and not null, 'no' otherwise #}
       {{ foo ?? 'no' }}
 
+<<<<<<< HEAD
+=======
+.. _templates-string-interpolation:
+
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 String Interpolation
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -825,7 +1139,11 @@ String interpolation (``#{expression}``) allows any valid expression to appear
 within a *double-quoted string*. The result of evaluating that expression is
 inserted into the string:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ "foo #{bar} baz" }}
     {{ "foo #{1 + 2} baz" }}
@@ -838,6 +1156,7 @@ Whitespace Control
 .. versionadded:: 1.1
     Tag level whitespace control was added in Twig 1.1.
 
+<<<<<<< HEAD
 The first newline after a template tag is removed automatically (like in PHP.)
 Whitespace is not further modified by the template engine, so each whitespace
 (spaces, tabs, newlines etc.) is returned unchanged.
@@ -859,12 +1178,39 @@ level. By using the whitespace control modifier on your tags, you can trim
 leading and or trailing whitespace:
 
 .. code-block:: jinja
+=======
+.. versionadded:: 1.39
+    Tag level Line whitespace control was added in Twig 1.39.
+
+The first newline after a template tag is removed automatically (like in PHP).
+Whitespace is not further modified by the template engine, so each whitespace
+(spaces, tabs, newlines etc.) is returned unchanged.
+
+You can also control whitespace on a per tag level. By using the whitespace
+control modifiers on your tags, you can trim leading and or trailing whitespace.
+
+Twig supports two modifiers:
+
+* *Whitespace trimming* via the ``-`` modifier: Removes all whitespace
+  (including newlines);
+
+* *Line whitespace trimming* via the ``~`` modifier: Removes all whitespace
+  (excluding newlines). Using this modifier on the right disables the default
+  removal of the first newline inherited from PHP.
+
+The modifiers can be used on either side of the tags like in ``{%-`` or ``-%}``
+and they consume all whitespace for that side of the tag. It is possible to use
+the modifiers on one side of a tag or on both sides:
+
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% set value = 'no spaces' %}
     {#- No leading/trailing whitespace -#}
     {%- if true -%}
         {{- value -}}
     {%- endif -%}
+<<<<<<< HEAD
 
     {# output 'no spaces' #}
 
@@ -879,30 +1225,82 @@ of a tag:
     <li>    {{- value }}    </li>
 
     {# outputs '<li>no spaces    </li>' #}
+=======
+    {# output 'no spaces' #}
+
+    <li>
+        {{ value }}    </li>
+    {# outputs '<li>\n    no spaces    </li>' #}
+
+    <li>
+        {{- value }}    </li>
+    {# outputs '<li>no spaces    </li>' #}
+
+    <li>
+        {{~ value }}    </li>
+    {# outputs '<li>\nno spaces    </li>' #}
+
+.. tip::
+
+    In addition to the whitespace modifiers, Twig also has a ``spaceless`` filter
+    that removes whitespace **between HTML tags**:
+
+    .. code-block:: twig
+
+        {% apply spaceless %}
+            <div>
+                <strong>foo bar</strong>
+            </div>
+        {% endapply %}
+
+        {# output will be <div><strong>foo bar</strong></div> #}
+
+    Note that the ``apply`` tag was introduced in Twig 1.40; use the ``filter``
+    tag with previous versions.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
 Extensions
 ----------
 
+<<<<<<< HEAD
 Twig can be easily extended.
 
 If you are looking for new tags, filters, or functions, have a look at the Twig official
 `extension repository`_.
+=======
+Twig can be extended. If you are looking for new tags, filters, or functions,
+have a look at the Twig official `extension repository`_.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
 If you want to create your own, read the :ref:`Creating an
 Extension<creating_extensions>` chapter.
 
 .. _`Twig bundle`:                https://github.com/Anomareh/PHP-Twig.tmbundle
 .. _`Jinja syntax plugin`:        http://jinja.pocoo.org/docs/integration/#vim
+<<<<<<< HEAD
 .. _`vim-twig plugin`:            https://github.com/evidens/vim-twig
 .. _`Twig syntax plugin`:         http://plugins.netbeans.org/plugin/37069/php-twig
 .. _`Twig plugin`:                https://github.com/pulse00/Twig-Eclipse-Plugin
 .. _`Twig language definition`:   https://github.com/gabrielcorpse/gedit-twig-template-language
 .. _`extension repository`:       http://github.com/twigphp/Twig-extensions
+=======
+.. _`vim-twig plugin`:            https://github.com/lumiliet/vim-twig
+.. _`Twig syntax plugin`:         http://plugins.netbeans.org/plugin/37069/php-twig
+.. _`Twig plugin`:                https://github.com/pulse00/Twig-Eclipse-Plugin
+.. _`Twig language definition`:   https://github.com/gabrielcorpse/gedit-twig-template-language
+.. _`extension repository`:       https://github.com/twigphp/Twig-extensions
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 .. _`Twig syntax mode`:           https://github.com/bobthecow/Twig-HTML.mode
 .. _`other Twig syntax mode`:     https://github.com/muxx/Twig-HTML.mode
 .. _`Notepad++ Twig Highlighter`: https://github.com/Banane9/notepadplusplus-twig
 .. _`web-mode.el`:                http://web-mode.org/
+<<<<<<< HEAD
 .. _`regular expressions`:        http://php.net/manual/en/pcre.pattern.php
 .. _`PHP-twig for atom`:          https://github.com/reesef/php-twig
 .. _`TwigFiddle`:                 http://twigfiddle.com/
+=======
+.. _`regular expressions`:        https://secure.php.net/manual/en/pcre.pattern.php
+.. _`PHP-twig for atom`:          https://github.com/reesef/php-twig
+.. _`TwigFiddle`:                 https://twigfiddle.com/
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 .. _`Twig pack`:                  https://marketplace.visualstudio.com/items?itemName=bajdzis.vscode-twig-pack

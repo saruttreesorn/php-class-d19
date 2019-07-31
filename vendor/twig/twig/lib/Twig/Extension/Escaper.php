@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -107,4 +108,14 @@ class Twig_Extension_Escaper extends Twig_Extension
 function twig_raw_filter($string)
 {
     return $string;
+=======
+use Twig\Extension\EscaperExtension;
+
+class_exists('Twig\Extension\EscaperExtension');
+
+if (\false) {
+    class Twig_Extension_Escaper extends EscaperExtension
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

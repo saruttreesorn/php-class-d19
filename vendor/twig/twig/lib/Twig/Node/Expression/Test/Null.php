@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -27,5 +28,14 @@ class Twig_Node_Expression_Test_Null extends Twig_Node_Expression_Test
             ->subcompile($this->getNode('node'))
             ->raw(')')
         ;
+=======
+use Twig\Node\Expression\Test\NullTest;
+
+class_exists('Twig\Node\Expression\Test\NullTest');
+
+if (\false) {
+    class Twig_Node_Expression_Test_Null extends NullTest
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

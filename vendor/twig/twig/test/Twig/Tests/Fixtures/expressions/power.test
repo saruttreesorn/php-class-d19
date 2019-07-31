@@ -9,7 +9,11 @@ Twig parses power expressions
 {{ b ** a }}
 {{ b ** b }}
 --DATA--
+<<<<<<< HEAD
 return array('a' => 4, 'b' => -2);
+=======
+return ['a' => 4, 'b' => -2]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 8
 -8

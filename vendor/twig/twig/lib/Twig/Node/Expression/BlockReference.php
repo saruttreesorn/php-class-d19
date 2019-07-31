@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -87,5 +88,14 @@ class Twig_Node_Expression_BlockReference extends Twig_Node_Expression
         }
 
         return $compiler->raw(')');
+=======
+use Twig\Node\Expression\BlockReferenceExpression;
+
+class_exists('Twig\Node\Expression\BlockReferenceExpression');
+
+if (\false) {
+    class Twig_Node_Expression_BlockReference extends BlockReferenceExpression
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

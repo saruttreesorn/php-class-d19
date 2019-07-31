@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -735,5 +736,14 @@ class Twig_ExpressionParser
         }
 
         return true;
+=======
+use Twig\ExpressionParser;
+
+class_exists('Twig\ExpressionParser');
+
+if (\false) {
+    class Twig_ExpressionParser extends ExpressionParser
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

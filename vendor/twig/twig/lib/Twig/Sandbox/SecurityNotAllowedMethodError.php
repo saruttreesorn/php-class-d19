@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -34,5 +35,14 @@ class Twig_Sandbox_SecurityNotAllowedMethodError extends Twig_Sandbox_SecurityEr
     public function getMethodName()
     {
         return $this->methodName;
+=======
+use Twig\Sandbox\SecurityNotAllowedMethodError;
+
+class_exists('Twig\Sandbox\SecurityNotAllowedMethodError');
+
+if (\false) {
+    class Twig_Sandbox_SecurityNotAllowedMethodError extends SecurityNotAllowedMethodError
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

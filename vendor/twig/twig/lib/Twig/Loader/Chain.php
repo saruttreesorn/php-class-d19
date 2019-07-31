@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -145,5 +146,14 @@ class Twig_Loader_Chain implements Twig_LoaderInterface, Twig_ExistsLoaderInterf
         }
 
         throw new Twig_Error_Loader(sprintf('Template "%s" is not defined%s.', $name, $exceptions ? ' ('.implode(', ', $exceptions).')' : ''));
+=======
+use Twig\Loader\ChainLoader;
+
+class_exists('Twig\Loader\ChainLoader');
+
+if (\false) {
+    class Twig_Loader_Chain extends ChainLoader
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

@@ -1,6 +1,7 @@
 ``import``
 ==========
 
+<<<<<<< HEAD
 Twig supports putting often used code into :doc:`macros<../tags/macro>`. These
 macros can go into different templates and get imported from there.
 
@@ -55,3 +56,8 @@ namespace:
     for the source.
 
 .. seealso:: :doc:`macro<../tags/macro>`, :doc:`from<../tags/from>`
+=======
+The ``import`` tag imports :doc:`macro<../tags/macro>` names in a local
+variable. The tag is documented in detail in the documentation for the
+:doc:`macro<../tags/macro>` tag.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9

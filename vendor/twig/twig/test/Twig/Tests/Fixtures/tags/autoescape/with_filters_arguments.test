@@ -9,7 +9,11 @@
 {{ var|nl2br(sep|escape) }}
 {% endautoescape %}
 --DATA--
+<<<<<<< HEAD
 return array('var' => "<Fabien>\nTwig", 'sep' => '<br />')
+=======
+return ['var' => "<Fabien>\nTwig", 'sep' => '<br />']
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 &lt;Fabien&gt;<br />
 Twig

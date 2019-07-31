@@ -1,6 +1,7 @@
 --TEST--
 "empty" test
 --TEMPLATE--
+<<<<<<< HEAD
 {{ foo is empty ? 'ok' : 'ko' }}
 {{ bar is empty ? 'ok' : 'ko' }}
 {{ foobar is empty ? 'ok' : 'ko' }}
@@ -32,14 +33,53 @@ return array(
     'countable_empty' => new CountableStub(array()), 'countable_not_empty' => new CountableStub(array(1, 2)),
     'markup_empty' => new Twig_Markup('', 'UTF-8'), 'markup_not_empty' => new Twig_Markup('test', 'UTF-8'),
 );
+=======
+{{ string_empty is empty ? 'ok' : 'ko' }}
+{{ string_zero is empty ? 'ko' : 'ok' }}
+{{ value_null is empty ? 'ok' : 'ko' }}
+{{ value_false is empty ? 'ok' : 'ko' }}
+{{ value_int_zero is empty ? 'ko' : 'ok' }}
+{{ array_empty is empty ? 'ok' : 'ko' }}
+{{ array_not_empty is empty ? 'ko' : 'ok' }}
+{{ magically_callable is empty ? 'ko' : 'ok' }}
+{{ countable_empty is empty ? 'ok' : 'ko' }}
+{{ countable_not_empty is empty ? 'ko' : 'ok' }}
+{{ tostring_empty is empty ? 'ok' : 'ko' }}
+{{ tostring_not_empty is empty ? 'ko' : 'ok' }}
+{{ markup_empty is empty ? 'ok' : 'ko' }}
+{{ markup_not_empty is empty ? 'ko' : 'ok' }}
+--DATA--
+return [
+    'string_empty' => '', 'string_zero' => '0',
+    'value_null' => null, 'value_false' => false, 'value_int_zero' => 0,
+    'array_empty' => [], 'array_not_empty' => [1, 2],
+    'magically_callable' => new MagicCallStub(),
+    'countable_empty' => new CountableStub([]), 'countable_not_empty' => new CountableStub([1, 2]),
+    'tostring_empty' => new ToStringStub(''), 'tostring_not_empty' => new ToStringStub('0' /* edge case of using "0" as the string */),
+    'markup_empty' => new \Twig\Markup('', 'UTF-8'), 'markup_not_empty' => new \Twig\Markup('test', 'UTF-8'),
+]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 ok
 ok
 ok
 ok
+<<<<<<< HEAD
 ko
 ko
 ok
 ko
 ok
 ko
+=======
+ok
+ok
+ok
+ok
+ok
+ok
+ok
+ok
+ok
+ok
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9

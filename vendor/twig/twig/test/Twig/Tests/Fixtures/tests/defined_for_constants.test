@@ -6,7 +6,11 @@
 {{ constant('FOOBAR') is not defined ? 'ok' : 'ko' }}
 {{ constant('FOOBAR', object) is not defined ? 'ok' : 'ko' }}
 --DATA--
+<<<<<<< HEAD
 return array('expect' => DATE_W3C, 'object' => new ArrayObject(array('hi')));
+=======
+return ['expect' => DATE_W3C, 'object' => new \ArrayObject(['hi'])]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 ok
 ok

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -42,5 +43,14 @@ class Twig_Node_Expression_NullCoalesce extends Twig_Node_Expression_Conditional
         } else {
             parent::compile($compiler);
         }
+=======
+use Twig\Node\Expression\NullCoalesceExpression;
+
+class_exists('Twig\Node\Expression\NullCoalesceExpression');
+
+if (\false) {
+    class Twig_Node_Expression_NullCoalesce extends NullCoalesceExpression
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

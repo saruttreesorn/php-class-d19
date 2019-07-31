@@ -44,7 +44,11 @@ safe_br
 
 {% endautoescape %}
 --DATA--
+<<<<<<< HEAD
 return array()
+=======
+return []
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 
 autoescape false
@@ -80,4 +84,8 @@ unsafe_br()|escape
 autoescape js
 
 safe_br
+<<<<<<< HEAD
 \x3Cbr\x20\x2F\x3E
+=======
+\u003Cbr\u0020\/\u003E
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9

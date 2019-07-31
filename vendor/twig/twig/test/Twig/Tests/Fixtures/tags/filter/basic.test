@@ -5,6 +5,10 @@
 Some text with a {{ var }}
 {% endfilter %}
 --DATA--
+<<<<<<< HEAD
 return array('var' => 'var')
+=======
+return ['var' => 'var']
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 SOME TEXT WITH A VAR

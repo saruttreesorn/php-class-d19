@@ -12,7 +12,11 @@
 /**
  * Represents a callable template function.
  *
+<<<<<<< HEAD
  * Use Twig_SimpleFunction instead.
+=======
+ * Use \Twig\TwigFunction instead.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
  *
  * @author Fabien Potencier <fabien@symfony.com>
  *

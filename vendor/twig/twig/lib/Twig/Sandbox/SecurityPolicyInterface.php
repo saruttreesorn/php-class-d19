@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -21,4 +22,14 @@ interface Twig_Sandbox_SecurityPolicyInterface
     public function checkMethodAllowed($obj, $method);
 
     public function checkPropertyAllowed($obj, $method);
+=======
+use Twig\Sandbox\SecurityPolicyInterface;
+
+class_exists('Twig\Sandbox\SecurityPolicyInterface');
+
+if (\false) {
+    class Twig_Sandbox_SecurityPolicyInterface extends SecurityPolicyInterface
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -61,5 +62,14 @@ class Twig_Profiler_NodeVisitor_Profiler extends Twig_BaseNodeVisitor
     public function getPriority()
     {
         return 0;
+=======
+use Twig\Profiler\NodeVisitor\ProfilerNodeVisitor;
+
+class_exists('Twig\Profiler\NodeVisitor\ProfilerNodeVisitor');
+
+if (\false) {
+    class Twig_Profiler_NodeVisitor_Profiler extends ProfilerNodeVisitor
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

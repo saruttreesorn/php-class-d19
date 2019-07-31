@@ -12,7 +12,11 @@
 /**
  * Represents a callable template filter.
  *
+<<<<<<< HEAD
  * Use Twig_SimpleFilter instead.
+=======
+ * Use \Twig\TwigFilter instead.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
  *
  * @author Fabien Potencier <fabien@symfony.com>
  *

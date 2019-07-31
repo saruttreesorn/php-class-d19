@@ -21,7 +21,11 @@ B
 {% endblock %}
 C
 --DATA--
+<<<<<<< HEAD
 return array('foo' => 'foo.twig')
+=======
+return ['foo' => 'foo.twig']
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 FOO
 

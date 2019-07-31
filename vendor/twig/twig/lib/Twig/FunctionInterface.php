@@ -10,10 +10,19 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 /**
  * Represents a template function.
  *
  * Use Twig_SimpleFunction instead.
+=======
+use Twig\Node\Node;
+
+/**
+ * Represents a template function.
+ *
+ * Use \Twig\TwigFunction instead.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
  *
  * @author Arnaud Le Blanc <arnaud.lb@gmail.com>
  *
@@ -32,7 +41,11 @@ interface Twig_FunctionInterface
 
     public function needsContext();
 
+<<<<<<< HEAD
     public function getSafe(Twig_Node $filterArgs);
+=======
+    public function getSafe(Node $filterArgs);
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     public function setArguments($arguments);
 

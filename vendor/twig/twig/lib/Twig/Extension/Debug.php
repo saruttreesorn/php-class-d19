@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -62,4 +63,14 @@ function twig_var_dump(Twig_Environment $env, $context)
     }
 
     return ob_get_clean();
+=======
+use Twig\Extension\DebugExtension;
+
+class_exists('Twig\Extension\DebugExtension');
+
+if (\false) {
+    class Twig_Extension_Debug extends DebugExtension
+    {
+    }
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 }

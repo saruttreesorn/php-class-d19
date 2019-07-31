@@ -26,7 +26,11 @@
 {{ arr[2:]|join('') }}
 {{ xml|slice(1)|join('')}}
 --DATA--
+<<<<<<< HEAD
 return array('start' => 1, 'length' => 2, 'arr' => new ArrayObject(array(1, 2, 3, 4)), 'xml' => new SimpleXMLElement('<items><item>1</item><item>2</item></items>'))
+=======
+return ['start' => 1, 'length' => 2, 'arr' => new \ArrayObject([1, 2, 3, 4]), 'xml' => new \SimpleXMLElement('<items><item>1</item><item>2</item></items>')]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 23
 23

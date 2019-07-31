@@ -3,6 +3,10 @@
 --TEMPLATE--
 {{ '<br />'|escape('html_attr') }}
 --DATA--
+<<<<<<< HEAD
 return array()
+=======
+return []
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 &lt;br&#x20;&#x2F;&gt;

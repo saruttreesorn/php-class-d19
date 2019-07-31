@@ -6,7 +6,11 @@
 
 The ``include`` function returns the rendered content of a template:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ include('template.html') }}
     {{ include(some_var) }}
@@ -19,7 +23,11 @@ paths defined by it.
 The context is passed by default to the template but you can also pass
 additional variables:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {# template.html will have access to the variables from the current context and the additional ones provided #}
     {{ include('template.html', {foo: 'bar'}) }}
@@ -27,18 +35,31 @@ additional variables:
 You can disable access to the context by setting ``with_context`` to
 ``false``:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {# only the foo variable will be accessible #}
     {{ include('template.html', {foo: 'bar'}, with_context = false) }}
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {# no variables will be accessible #}
     {{ include('template.html', with_context = false) }}
 
+<<<<<<< HEAD
 And if the expression evaluates to a ``Twig_Template`` or a
 ``Twig_TemplateWrapper`` instance, Twig will use it directly::
+=======
+And if the expression evaluates to a ``\Twig\Template`` or a
+``\Twig\TemplateWrapper`` instance, Twig will use it directly::
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     // {{ include(template) }}
 
@@ -48,19 +69,31 @@ And if the expression evaluates to a ``Twig_Template`` or a
     // as of Twig 1.28
     $template = $twig->load('some_template.twig');
 
+<<<<<<< HEAD
     $twig->display('template.twig', array('template' => $template));
+=======
+    $twig->display('template.twig', ['template' => $template]);
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
 When you set the ``ignore_missing`` flag, Twig will return an empty string if
 the template does not exist:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ include('sidebar.html', ignore_missing = true) }}
 
 You can also provide a list of templates that are checked for existence before
 inclusion. The first template that exists will be rendered:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ include(['page_detailed.html', 'page.html']) }}
 
@@ -70,7 +103,11 @@ of the templates exist, otherwise it will throw an exception.
 When including a template created by an end user, you should consider
 sandboxing it:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {{ include('page.html', sandboxed = true) }}
 

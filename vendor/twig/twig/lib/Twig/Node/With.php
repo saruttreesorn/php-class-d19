@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 /*
  * This file is part of Twig.
  *
@@ -58,5 +59,14 @@ class Twig_Node_With extends Twig_Node
             ->subcompile($this->getNode('body'))
             ->write("\$context = \$context['_parent'];\n")
         ;
+=======
+use Twig\Node\WithNode;
+
+class_exists('Twig\Node\WithNode');
+
+if (\false) {
+    class Twig_Node_With extends WithNode
+    {
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     }
 }

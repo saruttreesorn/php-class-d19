@@ -15,7 +15,11 @@ limited to single inheritance; a template can only extend one other template.
 This limitation makes template inheritance simple to understand and easy to
 debug:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% extends "base.html" %}
 
@@ -25,7 +29,11 @@ debug:
 Horizontal reuse is a way to achieve the same goal as multiple inheritance,
 but without the associated complexity:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% extends "base.html" %}
 
@@ -37,7 +45,11 @@ but without the associated complexity:
 The ``use`` statement tells Twig to import the blocks defined in
 ``blocks.html`` into the current template (it's like macros, but for blocks):
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {# blocks.html #}
     
@@ -47,7 +59,11 @@ In this example, the ``use`` statement imports the ``sidebar`` block into the
 main template. The code is mostly equivalent to the following one (the
 imported blocks are not outputted automatically):
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% extends "base.html" %}
 
@@ -70,7 +86,11 @@ The main template can also override any imported block. If the template
 already defines the ``sidebar`` block, then the one defined in ``blocks.html``
 is ignored. To avoid name conflicts, you can rename imported blocks:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% extends "base.html" %}
 
@@ -87,7 +107,11 @@ The ``parent()`` function automatically determines the correct inheritance
 tree, so it can be used when overriding a block defined in an imported
 template:
 
+<<<<<<< HEAD
 .. code-block:: jinja
+=======
+.. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
     {% extends "base.html" %}
 
@@ -108,7 +132,11 @@ the ``blocks.html`` template.
     In Twig 1.2, renaming allows you to simulate inheritance by calling the
     "parent" block:
 
+<<<<<<< HEAD
     .. code-block:: jinja
+=======
+    .. code-block:: twig
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 
         {% extends "base.html" %}
 

@@ -2,8 +2,15 @@
 "from" tag with reserved name
 --TEMPLATE--
 {% from 'forms.twig' import templateName %}
+<<<<<<< HEAD
 --TEMPLATE(forms.twig)--
 --DATA--
 return array()
 --EXCEPTION--
 Twig_Error_Syntax: "templateName" cannot be an imported macro as it is a reserved keyword in "index.twig" at line 2.
+=======
+--DATA--
+return []
+--EXCEPTION--
+Twig\Error\SyntaxError: "templateName" cannot be an imported macro as it is a reserved keyword in "index.twig" at line 2.
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9

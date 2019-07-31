@@ -39,22 +39,39 @@ Deep nested:
 {{ object.self.undefinedMethod |default('default') is same as('default') ? 'ok' : 'ko' }}
 {{ object.undefinedMethod.self |default('default') is same as('default') ? 'ok' : 'ko' }}
 --DATA--
+<<<<<<< HEAD
 return array(
+=======
+return [
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     'definedVar' => 'defined',
     'zeroVar'    => 0,
     'emptyVar'   => '',
     'nullVar'    => null,
+<<<<<<< HEAD
     'nested'     => array(
+=======
+    'nested'     => [
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
         'definedVar'   => 'defined',
         'zeroVar'      => 0,
         'emptyVar'     => '',
         'nullVar'      => null,
+<<<<<<< HEAD
         'definedArray' => array(0),
     ),
     'object' => new TwigTestFoo(),
 )
 --CONFIG--
 return array('strict_variables' => false)
+=======
+        'definedArray' => [0],
+    ],
+    'object' => new TwigTestFoo(),
+]
+--CONFIG--
+return ['strict_variables' => false]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 Variable:
 ok
@@ -94,22 +111,39 @@ ok
 ok
 ok
 --DATA--
+<<<<<<< HEAD
 return array(
+=======
+return [
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
     'definedVar' => 'defined',
     'zeroVar'    => 0,
     'emptyVar'   => '',
     'nullVar'    => null,
+<<<<<<< HEAD
     'nested'     => array(
+=======
+    'nested'     => [
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
         'definedVar'   => 'defined',
         'zeroVar'      => 0,
         'emptyVar'     => '',
         'nullVar'      => null,
+<<<<<<< HEAD
         'definedArray' => array(0),
     ),
     'object' => new TwigTestFoo(),
 )
 --CONFIG--
 return array('strict_variables' => true)
+=======
+        'definedArray' => [0],
+    ],
+    'object' => new TwigTestFoo(),
+]
+--CONFIG--
+return ['strict_variables' => true]
+>>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
 --EXPECT--
 Variable:
 ok

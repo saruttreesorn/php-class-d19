@@ -1,21 +1,13 @@
 <!doctype html>
-<<<<<<< HEAD
 <html>
     <head>
         <title>{{title}}</title>
-=======
-<html lang="en">
-    <head>
-        <title></title>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
->>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
         <script src="node_modules/jquery/dist/jquery.min.js"></script>
         <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
         <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     </head>
     <body>
-<<<<<<< HEAD
         <main class="container-fluid">
             <div class="row">
             {% for product in products %}
@@ -28,18 +20,6 @@
             {% endfor %}
             </div>
             
-=======
-        <main class="container">
-            <div class="row">
-                {% for product in products %}
-                <div class="col-md-3" data-id="{{product.product_id}}">
-                    <h3>{{product.name}}</h3>
-                    <h6>{{product.price}}</h6>
-                    <p>{{product.description}}</p>
-                </div>
-                {% endfor %}
-            </div>
->>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
         </main>
     </body>
 </html>

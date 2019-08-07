@@ -1,18 +1,10 @@
 {
     "require": {
-<<<<<<< HEAD
-        "twig/twig": "1.31.*"
+        "twig/twig": "1.42.*"
     },
     "autoload":{
         "psr-4": {
           "aitsydney\\" : "classes/"
-=======
-        "twig/twig": "1.42.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "aitsydney\\" : "classes/"
->>>>>>> 5784ff225e0936923e865fd418aab2eda72985f9
         }
     }
 }

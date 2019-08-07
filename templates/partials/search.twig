@@ -1,0 +1,16 @@
+<div class="row">
+  <h6 class="col">Your searched for <strong>{{result.keyword}}</strong> returned {{result.total}} items</h6>
+</div>
+{% for product in result.products %}
+<div class="row my-2">
+  <div class="col-md-2">
+    <img class="img-fluid" src="images/products/{{product.image}}">
+  </div>
+  <div class="col-md-10">
+    <h3>{{product.name}}</h3>
+    <p>{{product.description | slice(0,50) ~ '...' }}</p>
+    <a href="detail.php?product_id={{product.product_id}}">More</a>
+  </div>
+  
+</div>
+{% endfor %}

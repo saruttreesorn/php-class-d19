@@ -1,0 +1,43 @@
+
+<div class="row">
+{# product images #}
+  <div class="col-md-6">
+    {% if detail.images | length > 1 %}
+      <div class="carousel slide" data-ride="carousel" id="detail-carousel">
+        <ol class="indicators">
+        {% for image in detail.images %}
+          {% set active = (loop.index == 1) ? 'active' : '' %}
+          <li data-target="#detail-carousel" data-slide-to="{{ loop.index0 }}" class="{{active}}">
+            <img class="d-block img-fluid w-100" src="images/products/{{image}}">
+          </li>
+        {% endfor %}
+        </ol>
+        <div class="carousel-inner">
+          {% for image in detail.images %}
+            {% set active = (loop.index == 1) ? 'active' : '' %}
+            <div class="carousel-item {{active}}">
+              <img class="d-block img-fluid w-100" src="images/products/{{image}}">
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% else %}
+      {% for image in detail.images %}
+        <img class="img-fluid" src="images/products/{{image}}">
+      {% endfor %}
+    {% endif %}
+  </div>
+{# product detail #}
+  <div class="col-md-6">
+    <h3 class="text-capitalize">{{detail.product.name}}</h3>
+    <h5 class="price"> {{detail.product.price}} </h5>
+    <p class="product-detail-description"> {{detail.product.description}} </p>
+    <p class="text-success">{{detail.product.quantity}} available</p>
+    <form id="detail-form" class="form-inline" method="post">
+      <input type="number" class="form-control" value="1" min="1" max="{{detail.product.quantity}}">
+      <button type="submit" class="btn btn-primary mx-1" value="cart">Buy</button>
+      <button type="submit" class="btn btn-primary mx-1" value="wish">Add to Wishlist</button>
+    </form>
+  </div>
+</div>
+        

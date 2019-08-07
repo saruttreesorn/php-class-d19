@@ -9,3 +9,18 @@ body{
   text-transform: capitalize;
   min-height: 2.5em;
 }
+.carousel .indicators{
+  position: absolute;
+  top: 100%;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  z-index: 9999;
+  padding: 0;
+  width: 100%;
+}
+.carousel .indicators li{
+  width: 100px;
+  margin: 5px 5px;
+  cursor: pointer;
+}

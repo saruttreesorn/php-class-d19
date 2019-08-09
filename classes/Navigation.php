@@ -24,6 +24,7 @@ class Navigation extends Database {
       $this -> min_page_level = 0;
       $this -> max_page_level = 1;
     }
+    
     $query = 'SELECT * from page WHERE active = 1 AND level >= ? AND level <= ?';
     $statement = $this -> connection -> prepare( $query );
     $statement -> bind_param( 'ii', $this -> min_page_level, $this -> max_page_level );

@@ -1,0 +1,21 @@
+<aside class="sidebar">
+  <nav class="nav nav-pills flex-column">
+    {% if not categories.active  %}
+      {% set active = 'active' %}
+      
+    {% else %}
+      {% set active = '' %}
+    {% endif %}
+    <a class="nav-link {{active}}" href="{{categories.page}}">
+      {# <span class="badge badge-pill badge-primary">{{products.total}}</span> #}
+      All categories
+    </a>
+    {% for category in categories.items %}
+      {% set active = ( category.category_id == categories.active ) ? 'active' : '' %}
+      <a class="nav-link text-capitalize {{active}}" href="{{categories.page}}?category_id={{category.category_id}}">
+        <span class="badge badge-pill badge-primary">{{category.product_count}}</span>
+        {{category.category_name}} 
+      </a>
+    {% endfor %}
+  </nav>
+</aside>

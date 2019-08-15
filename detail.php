@@ -1,6 +1,11 @@
 <?php
 require('vendor/autoload.php');
 
+use aitsydney\Navigation;
+
+$nav = new Navigation();
+$navigation = $nav -> getNavigation();
+
 use aitsydney\ProductDetail;
 
 //get the product id from request

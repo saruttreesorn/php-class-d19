@@ -48,7 +48,12 @@ class Navigation extends Database{
                 array_push( $nav_items, $row );
             }
             $this -> nav_array['navigation'] = $nav_items;
+            $this -> nav_array['active'] = $this -> getActive();
         }
+        return $this -> nav_array;
+    }
+    public function getActive(){
+        return basename( $_SERVER['PHP_SELF'] );
     }
 }
 ?>

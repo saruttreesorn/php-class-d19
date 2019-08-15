@@ -1,6 +1,11 @@
 <?php
 require('vendor/autoload.php');
 
+use aitsydney\Navigation;
+
+$nav = new Navigation();
+$navigation = $nav -> getNavigation();
+
 use aitsydney\Product;
 
 //create an instance of Product class
@@ -17,6 +22,7 @@ $template = $twig -> load('home.twig');
 //output the template and pass the data
 
 echo $template -> render( array(
+    'navigation' => $navigation,
     'products' => $products,
     'title' => 'Welcome to the shop'
 ) );

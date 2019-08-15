@@ -3,8 +3,13 @@ namespace aitsydney;
 use aitsydney\Database;
 class Product extends Database{
     public $products = array();
+    public $category = null;
+
     public function __construct(){
         parent::__construct();
+        if( isset($_GET['category_id'] ) ){
+            $this -> category = $_GET['category_id'];
+        }
     }
     public function getProducts(){
         $query = "SELECT 
@@ -16,7 +21,23 @@ class Product extends Database{
         ( SELECT image_file_name FROM image WHERE image.image_id = @image_id ) AS image
         FROM product";
 
+        if( isset( $this -> category ) ){
+            $query = $query . 
+            " " . 
+            "
+            INNER JOIN
+            product_category
+            ON product_category.product_id = product.product_id
+            WHERE product_category.category_id = ?
+            ";
+        }
+
         $statement = $this -> connection -> prepare( $query );
+
+        if( isset( $this -> category ) ){
+            $statement -> bind_param( 'i', $this -> category );
+        }
+
         if( $statement -> execute() ){
             $result = $statement -> get_result();
             while( $row = $result -> fetch_assoc() ){

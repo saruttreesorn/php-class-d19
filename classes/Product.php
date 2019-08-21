@@ -4,8 +4,8 @@ class Product extends Database{
     public $products = array();
     private $category = null;
     private $perpage = 12;
-    private $page = 1;
-    
+    private $page = null;
+
     public $product_query = "
       SELECT 
       @product_id := product.product_id AS product_id,
@@ -23,6 +23,9 @@ class Product extends Database{
       if( isset( $_GET['category_id'] ) ){
         $this -> category = $_GET['category_id'];
       }
+      if( isset( $_GET['page'] ) ){
+        $this -> page = $_GET['page'];
+      }
     }
 
     public function getProducts(){
@@ -33,6 +36,14 @@ class Product extends Database{
           "INNER JOIN product_category
           ON product.product_id = product_category.product_id
           WHERE product_category.category_id = ?";
+      }
+      //if pagination is enabled
+      if( isset( $this -> page ) ){
+        //append to the query to add pagination
+        $this -> product_query = 
+        $this -> product_query . " " .
+        "AND product.product_id > ? 
+        ORDER BY product.product_id LIMIT ? ";
       }
       $statement = $this -> connection -> prepare( $this -> product_query );
       //if category is set we need to bind the category_id 

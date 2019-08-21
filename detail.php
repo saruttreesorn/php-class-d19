@@ -1,14 +1,6 @@
 <?php
 require('vendor/autoload.php');
 
-<<<<<<< HEAD
-use aitsydney\Product;
-
-//get the product id from request
-if( isset( $_GET['product_id']) ){
-    echo 'product id = ' . $_GET['product_id'];
-}
-=======
 use aitsydney\Navigation;
 
 $nav = new Navigation();
@@ -41,5 +33,4 @@ echo $template -> render([
     'detail' => $detail,
     'title' => $detail['product']['name']
 ]);
->>>>>>> 3f1de7356486353d4a633fc78e1b46310c10f041
 ?>

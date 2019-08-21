@@ -1,12 +1,8 @@
 <?php
 namespace aitsydney;
-<<<<<<< HEAD
-use aitsydney\Database;
-=======
 
 use aitsydney\Database;
 
->>>>>>> 3f1de7356486353d4a633fc78e1b46310c10f041
 class Product extends Database{
     public function __construct(){
         parent::__construct();

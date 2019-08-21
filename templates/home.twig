@@ -1,4 +1,5 @@
 <!doctype html>
+<<<<<<< HEAD
 <html lang="en">
     {% include 'partials/head.twig' %}
     <body >
@@ -13,8 +14,23 @@
                     <h6>{{product.price}}</h6>
                     <p>{{product.description | slice(0,50) ~ '...' }}</p>
                     <a href="detail.php?product_id={{product.product_id}}">Info</a>
+=======
+<html>
+    {% include 'partials/head.twig' %}
+    <body>
+    {% include 'partials/navigation.twig' %}
+        <main class="container-fluid">
+            <div class="row">
+            {% for product in products %}
+                <div class="col-md-3">
+                    <img class="img-fluid" src="images/products/{{product.image}}">
+                    <h4 class="product-name">{{product.name}}</h4>
+                    <h6 class="product-price">{{product.price}}</h6>
+                    <p class="product-description">{{product.description | slice(0,100) ~ '...'}}</p>
+                    <a href="detail.php?product_id={{product.product_id}}">Detail</a>
+>>>>>>> 3f1de7356486353d4a633fc78e1b46310c10f041
                 </div>
-                {% endfor %}
+            {% endfor %}
             </div>
         </main>
     </body>

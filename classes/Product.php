@@ -1,29 +1,37 @@
 <?php
 namespace aitsydney;
+<<<<<<< HEAD
 use aitsydney\Database;
+=======
+
+use aitsydney\Database;
+
+>>>>>>> 3f1de7356486353d4a633fc78e1b46310c10f041
 class Product extends Database{
-    public $products = array();
     public function __construct(){
         parent::__construct();
     }
     public function getProducts(){
-        $query = "SELECT 
-        @product_id := product.product_id AS product_id,
-        product.name,
-        product.description,
-        product.price,
-        ( SELECT @image_id := product_image.image_id FROM product_image WHERE product_image.product_id = @product_id LIMIT 1 ) AS image_id,
-        ( SELECT image_file_name FROM image WHERE image.image_id = @image_id ) AS image
-        FROM product";
-
+        $query = "
+            SELECT 
+            @product_id := product.product_id as product_id,
+            product.name,
+            product.description,
+            product.price,
+            @image_id := ( SELECT image_id FROM product_image WHERE product_id = @product_id LIMIT 1) as image_id,
+            ( SELECT image_file_name FROM image WHERE image_id = @image_id ) as image
+            FROM product 
+        ";
+        
         $statement = $this -> connection -> prepare( $query );
         if( $statement -> execute() ){
             $result = $statement -> get_result();
+            $product_array = array();
             while( $row = $result -> fetch_assoc() ){
-                array_push( $this -> products, $row );
+                array_push( $product_array, $row );
             }
+            return $product_array;
         }
-        return $this -> products;
     }
     //get product by id
     public function getProductDetail( $id ){

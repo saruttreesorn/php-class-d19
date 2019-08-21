@@ -1,9 +1,9 @@
 <aside class="categories">
   <nav class="nav flex-column nav-pills">
     {% if not categories.active %}
-    {% set all_active = 'active' %}
+      {% set all_active = 'active' %}
     {% else %}
-    {% set all_active = '' %}
+      {% set all_active = '' %}
     {% endif %}
       <a href="index.php" class="nav-link {{all_active}}">All Categories</a>
     {% for category in categories.items %}

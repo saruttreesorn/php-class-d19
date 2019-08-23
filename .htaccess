@@ -3,3 +3,8 @@ RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.+)$ index.php [QSA,L]
+
+SetEnv HOST localhost
+SetEnv USER website
+SetEnv PASS password
+SetEnv DB data

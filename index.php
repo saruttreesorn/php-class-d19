@@ -13,6 +13,8 @@ use aitsydney\Category;
 $cat = new Category();
 $categories = $cat -> getCategories();
 
+
+
 //Page View Section
 $loader = new Twig_Loader_Filesystem('templates');
 $twig = new Twig_Environment($loader, array(

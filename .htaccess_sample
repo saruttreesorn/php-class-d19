@@ -1,0 +1,7 @@
+# set parameters to access database
+# eg SetEnv VARNAME value
+# rename this file from .htaccess_sample to .htaccess
+SetEnv HOST localhost
+SetEnv USER website
+SetEnv PASS password
+SetEnv DB data

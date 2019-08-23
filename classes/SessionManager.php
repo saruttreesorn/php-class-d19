@@ -11,12 +11,18 @@ class SessionManager{
     $this -> auth_status = $this -> getAuthStatus();
   }
   public function getAuthStatus(){
-    if( isset($_SESSION['email']) ){
+    if( isset($_SESSION['auth']) ){
       return true;
     }
     else{
       return false;
     }
+  }
+  public function destroy(){
+    session_destroy();
+  }
+  public function setVar($var, $value ){
+    $_SESSION[$var] = $value;
   }
 }
 ?>

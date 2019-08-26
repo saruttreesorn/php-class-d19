@@ -2,11 +2,11 @@
 namespace aitsydney;
 
 class Validator{
-  public $response = array();
-  public $errors = array();
+  public static $response = array();
+  public static $errors = array();
   public static function email( $email ){
     //convert email string to an array
-    $email_chars = explode( '', $email );
+    $email_chars = str_split($email);
     //must contain exactly one @ symbol
     $count = 0;
     for( $i = 0; $i < count($email_chars); $i++ ){

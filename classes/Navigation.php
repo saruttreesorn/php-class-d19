@@ -11,12 +11,11 @@ class Navigation extends Database {
 
   public function __construct(){
     parent::__construct();
-    $this -> session = new SessionManager();
     $this -> buildNav();
   }
   
   protected function buildNav(){
-    if( $this -> session -> getAuthStatus() ){
+    if( SessionManager::getAuthStatus() ){
       $this -> max_page_level = 2;
       $this -> min_page_level = 1;
     }

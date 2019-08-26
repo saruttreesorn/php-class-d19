@@ -12,6 +12,10 @@
             {% include 'partials/search.twig' %}
         {% elseif view == 'register' %}
             {% include 'partials/register.twig' %}
+        {% elseif view == 'login' %}
+            {% include 'partials/login.twig' %}
+        {% elseif view == 'logout' %}
+            {% include 'partials/logout.twig' %}
         {% endif %}
         </main>
     </body>

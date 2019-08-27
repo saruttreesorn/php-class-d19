@@ -11,7 +11,7 @@ class Validator{
     $count = 0;
     for( $i = 0; $i < count($email_chars); $i++ ){
       if( $email_chars[$i] == '@'){
-
+        $count++;
       }
     }
     if( $count > 1 ){

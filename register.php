@@ -3,7 +3,6 @@ require("vendor/autoload.php");
 include('includes/navigation.php');
 
 use aitsydney\Account;
-use aitsydney\SessionManager;
 
 
 // receive the POST request from register form when submitted, but not active when page loads normally
@@ -15,6 +14,12 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ){
 
   $acc = new Account();
   $register = $acc -> register( $email, $password );
+  if( $register['success'] == false ){
+    $errors = $register['errors'];
+  }
+}
+if( isset($errors) == false){
+  $errors = '';
 }
 
 //Page View Section
@@ -26,7 +31,8 @@ $twig = new Twig_Environment($loader, array(
 $template = $twig -> load('main.twig');
 echo $template -> render( array(
   'view' => 'register',
-  'navitems' => $nav_items
+  'navitems' => $nav_items,
+  'errors' => $errors
   )
 );
 ?>

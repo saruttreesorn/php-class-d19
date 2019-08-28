@@ -31,11 +31,12 @@ class Account extends Database{
       $hash = password_hash( $password, PASSWORD_DEFAULT );
       $account_id = $this -> createAccountId();
       
-      try{ 
-        if( $statement = $this -> connection -> prepare( $query ) == false ){
+      try{
+        $statement = $this -> connection -> prepare( $query );
+        if( $statement == false ){
           throw( new \Exception('query error') );
         }
-        print_r( $this -> connection -> error_list );
+        
         if( $statement -> bind_param('sss', $account_id , $email, $hash ) == false ){
           throw( new \Exception('cannot bind parameters') );
         }

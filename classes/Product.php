@@ -18,8 +18,19 @@ class Product extends Database{
             ( SELECT image_file_name FROM image WHERE image_id = @image_id ) as image
             FROM product 
         ";
+
+        if( isset($_GET['category_id']) ){
+            $query = $query . " " . "INNER JOIN product_category
+            ON product.product_id = product_category.product_id
+            WHERE product_category.category_id = ?";
+        }
         
         $statement = $this -> connection -> prepare( $query );
+
+        if( isset($_GET['category_id']) ){
+            $statement -> bind_param('i', $_GET['category_id']);
+        }
+
         if( $statement -> execute() ){
             $result = $statement -> get_result();
             $product_array = array();
@@ -28,6 +39,27 @@ class Product extends Database{
             }
             return $product_array;
         }
+    }
+    //get product by id
+    public function getProductDetail( $id ){
+        $query = "SELECT
+        product_id,
+        name,
+        description,
+        price
+        FROM product
+        WHERE product_id = ?";
+
+        $statement = $this -> connection -> prepare( $query );
+        $statement -> bind_param( 'i', $id );
+        if( $statement -> execute() ){
+            $product_detail = array();
+            $result = $statement -> get_result();
+            $row = $result -> fetch_assoc();
+            $product_detail['product'] = $row;
+            return $product_detail;
+        }
+        
     }
 }
 ?>

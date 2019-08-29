@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 22, 2019 at 09:02 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: Aug 29, 2019 at 05:15 AM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -27,20 +29,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `account` (
-  `account_id` char(16) NOT NULL,
+  `account_id` binary(16) NOT NULL,
   `email` varchar(256) NOT NULL,
   `password` varchar(256) NOT NULL,
-  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `accessed` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `accessed` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated` timestamp NULL DEFAULT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `account`
---
-
-INSERT INTO `account` (`account_id`, `email`, `password`, `created`, `accessed`, `updated`) VALUES
-('08d438873834c7bc', 'bob2@email.com', '$2y$10$KBTHvDdErHsiUBJasFlAmOObKGt12qFVld2M9HXfPb9YEldnu7Ouu', '2019-08-22 06:34:35', '2019-08-22 06:34:35', '2019-08-22 06:34:35');
 
 --
 -- Indexes for dumped tables
@@ -50,8 +46,8 @@ INSERT INTO `account` (`account_id`, `email`, `password`, `created`, `accessed`,
 -- Indexes for table `account`
 --
 ALTER TABLE `account`
-  ADD PRIMARY KEY (`account_id`),
-  ADD UNIQUE KEY `email_unique` (`email`);
+  ADD PRIMARY KEY (`account_id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

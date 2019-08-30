@@ -2,6 +2,7 @@
 namespace aitsydney;
 
 use aitsydney\Database;
+use \Exception;
 
 class Account extends Database{
   public function __construct(){
@@ -32,11 +33,11 @@ class Account extends Database{
       try{
         $statement = $this->connection->prepare($query);
         if( $statement == false ){
-          throw(new \Exception('query failed') );
+          throw(new Exception('query failed') );
         }
         $statement -> bind_param('sss', $id, $email, $hash );
         if( $statement -> execute() == false ){
-          throw( new \Exception('execute failed') );
+          throw( new Exception('execute failed') );
         }
         else{
           //account is created
@@ -45,14 +46,25 @@ class Account extends Database{
         }
       }
       catch( Exception $exc ){
-        echo $exc -> getMessage();
-        error_log( $exc -> getMessage() );
+        //error_log( $exc -> getMessage() );
+        //check if it is a duplicate email error
+        $message = $exc -> getMessage();
+        if( $message !== 'execute failed' ){
+          error_log( $message );
+          $errors['system'] = 'Something went terribly wrong';
+        }
+        else{
+          $errors['email'] = 'Your email is already used';
+        }
+
       }
     }
     else{
       //return error messages
       $register_response['errors'] = $register_errors;
       $register_response['success'] = false;
+      //return what the user supplied in email
+      $register_response['email'] = $email;
     }
     return $register_response;
   }
@@ -92,33 +104,37 @@ class Account extends Database{
     try{
       $statement = $this -> connection -> prepare( $query );
       if( $statement == false ){
-        throw new \Exception('query error');
+        throw new Exception('query error');
       }
       if( $statement -> bind_param('s', $email ) == false ){
-        throw new \Exception('parameter error');
+        throw new Exception('parameter error');
       }
       if( $statement -> execute() == false ){
-        throw new \Exception('execution error');
-      }
-      else{
-        // query runs successfully
-        $result = $statement -> get_result();
-        $account = $result -> fetch_assoc();
-        if( $result -> num_rows == 0 ){
-          //account does not exist in database
-          $errors['account'] = 'credentials do not match our records';
-        }
-        else{
-          // see if passwords match
-          if( password_verify($password,$account['password']) == false ){
-            //passwords don't match
-            $errors['account'] = 'credentials do not match our records';
-          }
-        }
+        throw new Exception('execution error');
       }
     }
     catch( Exception $exc ){
       error_log( $exc -> getMessage() );
+      $errors['system'] = 'We are sorry, something is terribly wrong';
+      $response['errors'] = $errors;
+      $response['success'] = false;
+      return $response;
+    }
+
+    //process result of query
+    $result = $statement -> get_result();
+    $account = $result -> fetch_assoc();
+
+    try{
+      if( $result -> num_rows == 0 ){
+        throw new Exception('Credentials supplied do not match our system');
+      }
+      if( password_verify( $password, $account['password'] ) == false ){
+        throw new Exception('Credentials supplied do not match our system');
+      }
+    }
+    catch( Exception $exc ){
+      $errors['account'] = $exc -> getMessage();
     }
     // check if there are errors
     if( count($errors) > 0 ){

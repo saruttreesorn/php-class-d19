@@ -4,31 +4,33 @@ require('vendor/autoload.php');
 use aitsydney\Navigation;
 
 $nav = new Navigation();
-$navigation = $nav -> getNavigation();
+$nav_items = $nav -> getNavigation();
 
 use aitsydney\ProductDetail;
 
-//get the product id from request
-if( isset( $_GET['product_id']) == false ){
-    echo "incorrect parameter";
+//get the product id from url parameter
+if( isset( $_GET['product_id'] ) == false ){
+    echo "no parameter set";
     exit();
 }
 
-//initialise ProductDetail class
+//create an instance of ProductDetail class
 $pd = new ProductDetail();
 $detail = $pd -> getProductDetail( $_GET['product_id'] );
 
-//create the view using Twig
+//initialise twig template
 $loader = new Twig_Loader_Filesystem('templates');
-//create twig environment and pass the loader
-$twig = new Twig_Environment($loader);
-//call a twig template
-$template = $twig -> load('detail.twig');
-//output the template and pass the data
 
-echo $template -> render( array(
-    'navigation' => $navigation,
+//create twig environment
+$twig = new Twig_Environment($loader);
+
+//load a twig template
+$template = $twig -> load('detail.twig');
+
+//pass values to twig
+echo $template -> render([
+    'navigation' => $nav_items,
     'detail' => $detail,
     'title' => $detail['product']['name']
-) );
+]);
 ?>

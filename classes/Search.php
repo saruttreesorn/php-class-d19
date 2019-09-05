@@ -2,6 +2,7 @@
 namespace aitsydney;
 
 use aitsydney\Database;
+use \Exception;
 
 class Search extends Database{
   public $search_result = array();
@@ -21,10 +22,16 @@ class Search extends Database{
     $search_param = "%" . $this -> search_query . "%";
     $query = "
       SELECT 
-      product_id,
-      name,
-      price,
-      description
+      @product_id := product.product_id as product_id,
+      product.name,
+      product.price,
+      product.description,
+      ( SELECT @image_id := product_image.image_id 
+        FROM product_image 
+        WHERE product_image.product_id = @product_id LIMIT 1 ),
+      ( SELECT image_file_name 
+        FROM image 
+        WHERE image_id = @image_id ) as image
       FROM product
       WHERE
       name LIKE ?

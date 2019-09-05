@@ -5,7 +5,7 @@
     {% include 'partials/navigation.twig' %}
     <main class="container-fluid">
       <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-4 offset-md-4">
           <form id="register-form" action="login.php" method="post">
             <h1>Login to your account</h1>
             <div class="form-group">
@@ -21,7 +21,7 @@
               <div class="alert alert-success">
                 Login successful!
               </div>
-            {% elseif login.errors.account %}
+            {% elseif login.errors.account or login.errors.system %}
               <div class="alert alert-warning">
                 {{login.errors.account}}
               </div>

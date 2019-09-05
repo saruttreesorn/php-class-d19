@@ -1,13 +1,8 @@
 <?php
 require('vendor/autoload.php');
 
-//create navigation
-use aitsydney\Navigation;
+// create account
 use aitsydney\Account;
-
-$nav = new Navigation();
-$navigation = $nav -> getNavigation();
-
 if( $_SERVER['REQUEST_METHOD']=='POST' ){
   $email = $_POST['email'];
   $password = $_POST['password'];
@@ -15,11 +10,19 @@ if( $_SERVER['REQUEST_METHOD']=='POST' ){
   //create an instance of account class
   $acc = new Account();
   $login = $acc -> login( $email, $password );
-  print_r($login);
+  
 }
 else{
   $login='';
 }
+
+//create navigation
+use aitsydney\Navigation;
+
+$nav = new Navigation();
+$navigation = $nav -> getNavigation();
+
+
 
 //create twig loader for templates
 $loader = new Twig_Loader_Filesystem('templates');

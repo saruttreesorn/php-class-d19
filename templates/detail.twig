@@ -5,7 +5,7 @@
     {% include 'partials/navigation.twig' %}
         <main class="container-fluid" style="padding-top:30px;">
             <div class="row">
-                <div class="col-md-4 offset-md-2">
+                <div class="col-md-5 offset-md-1">
                     {% if detail.images | length > 1 %}
                     <div class="carousel slide" id="product-carousel" data-ride="carousel">
                         <div class="carousel-inner">
@@ -38,12 +38,62 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <h3 class="text-capitalize">{{detail.product.name}}</h3>
                     <h5 class="price">{{detail.product.price}}</h5>
                     <p>{{detail.product.description}}</p>
+                    {% set class= ( detail.product.quantity < 5 ) ? 'text-danger' : 'text-success' %}
+                    <p class="{{class}}"> {{detail.product.quantity}} in stock</p>
+                    <form id="cart-form w-100" method="get">
+                        <div class="form-row flex-wrap">
+                            <div class="col-md-4 col-sm-6 col-6">
+                                <div class="input-group flex-nowrap" style="min-width:8em;">
+                                    <div class="input-group-prepend">
+                                        <button id="minus" class="btn btn-primary" type="button">&minus;</button>
+                                    </div>
+                                    <input id="quantity" type="number" class="form-control text-center" name="quantity" value="1" max="{{detail.product.quantity}}" min="1">
+                                    <div class="input-group-append">
+                                        <button id="plus" class="btn btn-primary"  type="button">&plus;</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-3 col-3">
+                                <button type="submit" class="btn btn-primary w-100" name="add" value="cart">
+                                    <i class="fa fa-shopping-basket"></i>
+                                </button>
+                            </div>
+                            <div class="col-md-4 col-sm-3 col-3">
+                                <button type="submit" class="btn btn-primary w-100" name="add" value="list">
+                                    <i class="fa fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <input type="hidden" name="product_id" value="{{detail.product.product_id}}">
+                    </form>
                 </div>
             </div>
         </main>
+        <script>
+        // script for add and minus button
+        $(document).ready(
+            () => {
+                let qty = $('#quantity').val();
+                let max = $('#quantity').attr('max');
+               
+                $('#plus').click( () => {
+                    qty++;
+                    if( qty <= max ){
+                         $('#quantity').val(qty);
+                    }
+                });
+                $('#minus').click( () => {
+                    if( qty > 1 ){
+                        qty--;
+                        $('#quantity').val(qty);
+                    }
+                });
+            }
+        );
+        </script>
     </body>
 </html>

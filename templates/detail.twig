@@ -43,30 +43,26 @@
                     <h5 class="price">{{detail.product.price}}</h5>
                     <p>{{detail.product.description}}</p>
                     {% set class= ( detail.product.quantity < 5 ) ? 'text-danger' : 'text-success' %}
-                    <p class="{{class}}"> {{detail.product.quantity}} in stock</p>
+
+                    <p id="available" class="{{class}}"> {{detail.product.quantity}} in stock</p>
+
                     <form id="cart-form w-100" method="get">
-                        <div class="form-row flex-wrap">
-                            <div class="col-md-4 col-sm-6 col-6">
-                                <div class="input-group flex-nowrap" style="min-width:8em;">
+                        <div class="d-flex flex-wrap">
+                                <div class="input-group flex-nowrap mr-2" style="min-width:5em;max-width:8em;">
                                     <div class="input-group-prepend">
                                         <button id="minus" class="btn btn-primary" type="button">&minus;</button>
                                     </div>
-                                    <input id="quantity" type="number" class="form-control text-center" name="quantity" value="1" max="{{detail.product.quantity}}" min="1">
+                                    <input id="quantity" type="text" class="form-control text-center" name="quantity" value="1" max="{{detail.product.quantity}}" min="1" style="min-width:3em;">
                                     <div class="input-group-append">
                                         <button id="plus" class="btn btn-primary"  type="button">&plus;</button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4 col-sm-3 col-3">
-                                <button type="submit" class="btn btn-primary w-100" name="add" value="cart">
+                                <button type="submit" class="btn btn-primary mr-2" name="add" value="cart">
                                     <i class="fa fa-shopping-basket"></i>
                                 </button>
-                            </div>
-                            <div class="col-md-4 col-sm-3 col-3">
-                                <button type="submit" class="btn btn-primary w-100" name="add" value="list">
+                                <button type="submit" class="btn btn-primary mr-2" name="add" value="list">
                                     <i class="fa fa-heart"></i>
                                 </button>
-                            </div>
                         </div>
                         <input type="hidden" name="product_id" value="{{detail.product.product_id}}">
                     </form>
@@ -74,7 +70,7 @@
             </div>
         </main>
         <script>
-        // script for add and minus button
+        // script for add and minus button in detail page
         $(document).ready(
             () => {
                 let qty = $('#quantity').val();

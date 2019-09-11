@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jul 31, 2019 at 10:27 PM
--- Server version: 5.7.27-0ubuntu0.16.04.1
--- PHP Version: 7.2.15-1+ubuntu16.04.1+deb.sury.org+1
+-- Host: 127.0.0.1
+-- Generation Time: Aug 29, 2019 at 05:20 AM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `data`
+-- Database: `data2`
 --
 
 -- --------------------------------------------------------
@@ -32,9 +32,15 @@ CREATE TABLE `category` (
   `category_id` int(11) NOT NULL,
   `category_name` varchar(32) NOT NULL,
   `category_description` varchar(128) NOT NULL,
+<<<<<<< HEAD
   `active` tinyint(1) NOT NULL DEFAULT '1',
   `created` timestamp NULL DEFAULT NULL,
   `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+=======
+  `active` tinyint(1) NOT NULL DEFAULT 1,
+  `created` timestamp NULL DEFAULT NULL,
+  `updated` timestamp NOT NULL DEFAULT current_timestamp()
+>>>>>>> fd2b4cec4ad976e60e00e3f38b9c827b8863d66f
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

@@ -20,7 +20,7 @@
     </nav>
     <div class="collapse navbar-collapse flex-grow-0 order-8" id="main-nav">
         <nav class="nav navbar-nav ml-auto">
-        {% for item in navigation.navigation %}
+        {% for item in navigation.items %}
             {% set active = ( item.url == navigation.active ) ? 'active' : '' %}
             <a class="nav-link {{active}}" href="{{item.url}}">{{item.menu}}</a>
         {% endfor %}

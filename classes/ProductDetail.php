@@ -35,8 +35,6 @@ class ProductDetail extends Product{
             return $this -> product_detail;
         }
     }
-    return $this -> product_detail;
-  }
   private function getProductImages( $id ){
     $images_query = "
       SELECT 

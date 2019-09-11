@@ -115,12 +115,6 @@ class Account extends Database{
     }
     return $response;
   }
-  private function createAccountId(){
-    //get random bytes
-    $bytes = openssl_random_pseudo_bytes(16);
-    //convert to hexadecimal
-    $str = bin2hex( $bytes );
-    return $str;
-  }
+  
 }
 ?>

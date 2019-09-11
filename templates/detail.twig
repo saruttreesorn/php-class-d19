@@ -15,7 +15,15 @@
                                 <img src="images/products/{{image.image_file_name}}">
                             </div>
                             {% endfor %}
-                        </ol>
+                        </div>
+                        <ol class="carousel-indicators">
+                            {% for image in detail.images %}
+                            <li data-target="#product-carousel" data-slide-to="{{loop.index0}}">
+                                <img src="images/products/{{image.image_file_name}}" class="img-fluid">
+                            </li>
+                            {% endfor %}
+                        </ol>    
+                        
                         <a class="carousel-control-prev" href="#product-carousel" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
@@ -27,7 +35,7 @@
                     </div>
                     {% else %}
                         {% for image in detail.images %}
-                            <img src="images/products/products/{{image}}" class="img-fluid">
+                            <img src="images/products/{{image.image_file_name}}" class="img-fluid">
                         {% endfor %}
                     {% endif %}
                      
@@ -36,10 +44,6 @@
                     <h3 class="text-capitalize">{{detail.product.name}}</h3>
                     
                     <p>{{detail.product.description}}</p>
-<<<<<<< HEAD
-                    <form class="form-inline" id="shop-form">
-                        <input type="number" min="1" max="10" class="form-control" value="1">
-=======
                     <h5 class="price">{{detail.product.price}}</h5>
                     {% set class= ( detail.product.quantity < 5 ) ? 'text-danger' : 'text-success' %}
 
@@ -65,7 +69,6 @@
                                 </button>
                         </div>
                         <input type="hidden" name="product_id" value="{{detail.product.product_id}}">
->>>>>>> fd2b4cec4ad976e60e00e3f38b9c827b8863d66f
                     </form>
                 </div>
             </div>

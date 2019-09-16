@@ -15,7 +15,7 @@ class Navigation extends Database {
   }
   
   protected function buildNav(){
-    if( SessionManager::getAuthStatus() ){
+    if( SessionManager::get('auth') ){
       $this -> max_page_level = 2;
       $this -> min_page_level = 1;
     }

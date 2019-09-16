@@ -1,19 +1,27 @@
 <?php
 namespace aitsydney;
 
+use \Exception;
+
 class Validator{
   public static $response = array();
   public static $errors = array();
   public static function email( $email ){
-    //convert email string to an array
+    //convert email string to an array with str_split
     $email_chars = str_split($email);
-    //must contain exactly one @ symbol
-    $count = 0;
-    for( $i = 0; $i < count($email_chars); $i++ ){
-      if( $email_chars[$i] == '@'){
-        $count++;
+    //iterate through the characters of the email address
+    try{
+      for( $i = 0; $i < count($email_chars); $i++ ){
+        //if the @ symbol is at the beginning 
+        if( $email_chars[$i] == '@' && $i == 0 ){
+          throw new Exception();
+        }
       }
     }
+    catch( Exception $exc ){
+
+    }
+    
     if( $count > 1 ){
       //email contains more than one @
       array_push( self::$errors, 'must contain exactly one @ symbol');

@@ -1,8 +1,8 @@
 <?php
 namespace aitsydney;
- 
+// this class is a wrapper for the PHP Session object
 class SessionManager{ 
-  public static function initSession() {
+  public static function init() {
     //check session status
     // if not started
     if( session_status() == PHP_SESSION_NONE ){
@@ -10,24 +10,17 @@ class SessionManager{
       session_start();
     }
   }
-  public static function getAuthStatus(){
-    self::initSession();
-    return self::getVar('auth');
-  }
-  public static function destroy(){
-    self::initSession();
-    session_destroy();
-  }
-  public static function setVar($var, $value ){
-    self::initSession();
+  public static function set($var, $value ){
+    self::init();
     $_SESSION[$var] = $value;
+    return;
   }
-  public static function getVar( $var_name ){
-    self::initSession();
+  public static function get( $var_name ){
+    self::init();
     return ( isset( $_SESSION[$var_name] ) ) ? $_SESSION[$var_name] : false;
   }
-  public static function unsetVar( $var ){
-    self::initSession();
+  public static function empty( $var ){
+    self::init();
     unset( $_SESSION[$var] );
     return;
   }

@@ -1,9 +1,15 @@
 <?php
 require("vendor/autoload.php");
-include('includes/navigation.php');
+
 
 use aitsydney\Account;
+use aitsydney\SessionManager;
 
+// start session
+SessionManager::init();
+
+// include navigation
+include('includes/navigation.php');
 // receive the POST request from register form when submitted, but not active when page loads normally
 if( $_SERVER['REQUEST_METHOD'] == 'POST' ){
   //receive email address from form

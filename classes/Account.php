@@ -2,6 +2,7 @@
 
 namespace aitsydney;
 
+use \Exception;
 use aitsydney\Database;
 use aitsydney\Token;
 use aitsydney\Validator;
@@ -46,14 +47,14 @@ class Account extends Database{
       try{
         $statement = $this -> connection -> prepare( $query );
         if( $statement == false ){
-          throw new \Exception('query failed');
+          throw new Exception('query failed');
         }
         if( $statement -> bind_param('sss', $account_id, $email, $hashed ) == false ){
-          throw new \Exception('parameter binding failed');
+          throw new Exception('parameter binding failed');
         }
         if( $statement -> execute() == false ){
 
-          throw new \Exception('execute failed');
+          throw new Exception('execute failed');
         }
         else{
           //account is created
@@ -86,13 +87,13 @@ class Account extends Database{
     try{
       $statement = $this -> connection -> prepare( $query );
       if( $statement == false ){
-        throw new \Exception('query error');
+        throw new Exception('query error');
       }
       if( $statement -> bind_param('s',$email ) == false ){
-        throw new \Exception('parameter binding failed');
+        throw new Exception('parameter binding failed');
       }
       if( $statement -> execute() == false ){
-        throw new \Exception('execute failed');
+        throw new Exception('execute failed');
       }
     }
     catch( Exception $exc ){
@@ -119,5 +120,6 @@ class Account extends Database{
     }
 
   }
+  
 }
 ?>

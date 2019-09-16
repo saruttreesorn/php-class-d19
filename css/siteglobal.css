@@ -24,3 +24,7 @@ body{
   margin: 5px 5px;
   cursor: pointer;
 }
+.logo{
+  min-width: 100px;
+  max-width: 150px;
+}

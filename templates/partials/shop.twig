@@ -4,6 +4,7 @@
   </div>
   <div class="col-md-10">
       <div class="row">
+      {# find the name of the selected category #}
         {% set category_name = '' %}
         {% for category in categories.items %}
           {% if categories.active == category.category_id %}
@@ -12,8 +13,9 @@
         {% endfor %}
           <p class="col">
           Total of {{products.total}} products
+          {# if there is a category selected #}
           {% if category_name %}
-            <span class="text-capitalize"> in <strong>{{category_name}}</strong> </span>
+            <span class="text-capitalize"> in <strong>{{category_name}}</strong></span> category
           {% endif %}
           </p>
       </div>
@@ -24,7 +26,7 @@
             <img class="img-fluid card-img-top" src="images/products/{{product.image}}">
         </a>
             <div class="card-body">
-                <h4 class="card-title product-name">{{product.name}}</h4>
+                <h4 class="card-title text-capitalize">{{product.name}}</h4>
                 <h6 class="card-subtitle price">{{product.price}}</h6>
                 <p>{{product.description|slice(0,50) ~ '...' }}</p>
             </div>

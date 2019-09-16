@@ -1,12 +1,17 @@
 <?php
 require("vendor/autoload.php");
+
+// start session
+SessionManager::init();
+
+// include navigation
 include('includes/navigation.php');
 
 use aitsydney\SessionManager;
 
 if( $_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['action'] == 'logout'){
   //process logout
-  SessionManager::unsetVar('auth');
+  SessionManager::empty('auth');
   //redirect
   header("location: index.php");
 }

@@ -3,74 +3,111 @@ namespace aitsydney;
 
 use \Exception;
 
+//validates email, username or password
 class Validator{
   public static $response = array();
   public static $errors = array();
   public static function email( $email ){
-    //convert email string to an array with str_split
-    $email_chars = str_split($email);
-    //iterate through the characters of the email address
-    try{
-      for( $i = 0; $i < count($email_chars); $i++ ){
-        //if the @ symbol is at the beginning 
-        if( $email_chars[$i] == '@' && $i == 0 ){
-          throw new Exception();
+    $response = array();
+    $errors = array();
+    
+    if( filter_var($email,FILTER_VALIDATE_EMAIL) == false ){
+      $errors['invalid'] = 'invalid email address';
+    }
+    if( count($errors) > 0 ){
+      $response['errors'] = $errors;
+      $response['success'] = false;
+    }
+    else{
+      $response['success'] = true;
+    }
+    return $response;
+  }
+  public static function username( $username, $min = 4, $max = 16 ){
+    $response = array();
+    $errors = array();
+    //split username into array
+    $chars = str_split( $username );
+    // if username is not letters and numbers (eg contains symbols)
+    if( ctype_alnum($username) == false ){
+      $exc = array();
+      for( $i = 0; $i < count($chars); $i++ ){
+        if( ctype_alnum( $chars[$i] ) == false && $chars[$i] !== '-' && $chars[$i] !== '_' && $chars[$i] !== ' ' ){
+          array_push( $exc , $chars[$i] );
         }
       }
+      if( count($exc) > 0 ){
+        $symbols = implode( ' or ' , $exc );
+        $errors['alphanumeric'] = "username cannot contain $symbols" ;
+      }
     }
-    catch( Exception $exc ){
+    // if username has spaces at beginning or end
+    if( strlen( trim($username) ) !== strlen($username) ){
+      $errors['startchar'] = 'username cannot begin or end with space' ;
+    }
+    // if username contains spaces
+    if( strpos( ' ' , $username ) > 0 ){
+      $errors['spaces'] = 'username cannot contain spaces' ;
+    }
+    // if username contains html tags
+    if( strlen( strip_tags($username) ) !== strlen($username) ){
+      $errors['html'] = 'username cannot contain html tags';
+    }
+    if( strlen( $username < $min ) || strlen( $username > $max ) ){
+      $errors['length'] = "username must be between $min and $max characters" ;
+    }
 
+    if( count($errors) > 0 ){
+      $response['success'] = false;
+      $response['errors'] = $errors;
+    }
+    else{
+      $response['success'] = true;
+    }
+    return $response;
+  }
+  public static function password( $password , $length = 8 ){
+    $response = array();
+    $errors = array();
+    if( strlen($password) < 8 ){
+      $errors['length'] = 'password must be '.$length.' characters or more';
+    }
+    //total count of letters in the string
+    $lower = 0;
+    $num = 0;
+    $upper = 0;
+    //split string into an array
+    $chars = str_split($password );
+    print_r($chars);
+    for( $i = 0; $i < count($chars); $i++ ){
+      if( ctype_lower( $chars[$i] ) ){ 
+        $lower++; 
+      }
+      if( ctype_digit( $chars[$i] ) ){ 
+        $num++; 
+      }
+      if( ctype_upper( $chars[$i] ) ){ 
+        $upper++;
+      }
+    }
+    if( $lower == 0 ){
+      $errors['alpha'] = 'password must contain at least one lowercase character';
+    }
+    if( $num == 0 ){
+      $errors['numeric'] = 'password must contain at least one digit';
+    }
+    if( $upper == 0 ){
+      $errors['upper'] = 'password must contain at least one uppercase character';
     }
     
-    if( $count > 1 ){
-      //email contains more than one @
-      array_push( self::$errors, 'must contain exactly one @ symbol');
-    }
-    //should be at least one character from beginning
-    if( strpos($email,'@') < 1 && strpos($email, '@') !== -1 ){
-      //contains @ in the beginning
-      array_push( self::$errors, 'cannot begin with @ symbol');
-    }
-    //should be less or equal to 256 chars
-    if( strlen($email) > 256 ){
-      //longer than standard allows
-      array_push( self::$errors, 'email address too long');
-    }
-    //use php filter to validate the rest (it's complicated)
-    if( filter_var($email, FILTER_VALIDATE_EMAIL) == false ){
-      // email is not valid for other reasons
-      array_push( self::$errors, 'email is invalid');
-    }
-    if( count(self::$errors) > 0 ){
-      self::$response['success'] = false;
-      self::$response['errors'] = self::$errors;
+    if( count($errors) > 0 ){
+      $response['success'] = false;
+      $response['errors'] = $errors;
     }
     else{
-      self::$response['success'] = true;
+      $response['success'] = true;
     }
-    return self::$response;
-  }
-  public static function username( $username ){
-
-  }
-  public static function password( $password, $detailed = false ){
-    if( strlen($password) < 8 ){
-      array_push( self::$errors, '8 characters or more' );
-    }
-    if( ctype_lower($password) ){
-      array_push( self::$errors, 'must contain a capital letter' );
-    }
-    if( ctype_digit($password) ){
-      array_push( self::$errors, 'cannot be numbers' );
-    }
-    if( count(self::$errors) > 0 ){
-      self::$response['success'] = false;
-      self::$response['errors'] = self::$errors;
-    }
-    else{
-      self::$response['success'] = true;
-    }
-    return self::$response;
+    return $response;
   }
 }
 ?>

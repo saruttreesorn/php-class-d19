@@ -1,11 +1,6 @@
 <?php
 require('vendor/autoload.php');
 
-//test for navigation after auth
-//session_start();
-// $_SESSION['auth'] = true;
-// session_destroy();
-
 use aitsydney\Navigation;
 
 $nav = new Navigation();

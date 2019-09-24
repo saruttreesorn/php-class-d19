@@ -39,11 +39,6 @@ class Product extends Database{
             ";
         }
 
-        if( isset($_GET['category_id']) ){
-            $query = $query . " " . "INNER JOIN product_category
-            ON product.product_id = product_category.product_id
-            WHERE product_category.category_id = ?";
-        }
         
         $statement = $this -> connection -> prepare( $query );
 

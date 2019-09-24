@@ -71,12 +71,22 @@ The *--save* switch will ensure that the packages installed will be added as a d
 ## Adding database tables
 Download the *.sql* files from the *db_tables* directory of this repository. Open PhpMyAdmin and create a database that we will use for the project. Then import the *sql* files one by one, in the following order:
 - product.sql
-- images.sql
+- category.sql
+- image.sql
 - product_image.sql
 - product_quantity.sql
 - product_category.sql
 
 These will provide some sample data for our project.
+
+# Connecting to the database
+In the root of the project directory, create a file named *.htaccess* . We will use this file to store the credentials of the database account.
+```
+SetEnv dbuser your database user
+SetEnv dbpass your database password
+SetEnv dbname your database name
+SetEnv dbhost your database host
+```
 
 
 

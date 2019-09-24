@@ -1,34 +1,25 @@
 <?php
 namespace aitsydney;
 class Database{
-    /* to access database, create a file called .htaccess
-    in the root of your project and add the following lines
-    SetEnv dbhost localhost
-    SetEnv dbuser [your database user]
-    SetEnv dbpass [your database password]
-    SetEnv dbname [your database name]
-
-    Replace the bracketed values with your database credentials and name
-    */
+    private $user;
+    private $password;
+    private $host;
+    private $db;
     protected $connection;
-    private $dbhost;
-    private $dbuser;
-    private $dbpassword;
-    private $dbname;
-    public function __construct(){
-
+    protected function __construct(){
+        $this -> getConfig();
         $this -> connection = mysqli_connect(
-            $this -> dbhost,
-            $this -> dbuser,
-            $this -> dbpassword,
-            $this -> dbname
+            $this -> host,
+            $this -> user,
+            $this -> password,
+            $this -> db
         );
     }
-    private function getCredentials(){
-        $this -> dbhost = getenv('dbhost');
-        $this -> dbuser = getenv('dbuser');
-        $this -> dbpassword = getenv('dbpass');
-        $this -> dbname = getenv('dbname');
+    private function getConfig(){
+        $this -> user = getenv('dbuser');
+        $this -> password = getenv('dbpass');
+        $this -> host = getenv('dbhost');
+        $this -> db = getenv('dbname');
     }
 }
 ?>

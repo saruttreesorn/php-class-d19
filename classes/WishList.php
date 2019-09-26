@@ -7,6 +7,9 @@ class WishList extends Database {
   public function __construct(){
     parent::__construct();
   }
-  
+
+  private function initSession(){
+    
+  }
 }
 ?>

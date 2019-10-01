@@ -1,6 +1,12 @@
 <?php
 require('vendor/autoload.php');
 
+//get user's wishlist total
+use aitsydney\WishList;
+
+$wish = new WishList();
+$wish_total = $wish -> getWishListTotal();
+
 // create account
 use aitsydney\Account;
 if( $_SERVER['REQUEST_METHOD']=='POST' ){
@@ -34,6 +40,7 @@ $template = $twig -> load('login.twig');
 
 echo $template -> render( array(
     'login' => $login,
+    'wish' => $wish_total,
     'navigation' => $navigation,
     'title' => 'Login to your account'
 ) );

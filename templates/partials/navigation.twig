@@ -13,10 +13,12 @@
             <i class="fa fa-shopping-basket"></i>
             <span class="badge badge-warning">0</span>
         </button>
-        <button class="btn btn-primary">
+
+        {% set wishcount = (wish) ? wish : 0 %}
+        <a class="btn btn-primary" href="list.php">
             <i class="fa fa-heart"></i>
-            <span class="badge badge-warning">0</span>
-        </button>
+            <span class="badge badge-warning">{{wishcount}}</span>
+        </a>
     </nav>
     <div class="collapse navbar-collapse flex-grow-0 order-8" id="main-nav">
         <nav class="nav navbar-nav ml-auto">

@@ -9,10 +9,10 @@
         <button type="submit" class="d-none d-md-inline btn btn-primary"><i class="fa fa-search"></i></button>
     </form>
     <nav class="nav flex-grow-1 order-5 justify-content-end">
-        <button class="btn btn-primary">
+        <a class="btn btn-primary" href="cart.php">
             <i class="fa fa-shopping-basket"></i>
             <span class="badge badge-warning">0</span>
-        </button>
+        </a>
 
         {% set wishcount = (wish) ? wish : 0 %}
         <a class="btn btn-primary" href="list.php">
